@@ -1,0 +1,231 @@
+{
+    "title": "MCQ treningsoppgaver i MIKROBIOLOGI",
+    "questions": [
+        {
+            "question": "1. Hva er riktig påstand?",
+            "answers": [
+                {
+                    "text": "a) Alle livsformer på jorda er bygget på grunnlag av den prokaryote cellen",
+                    "correct": false
+                },
+                {
+                    "text": "b) Alle bakterier er prokaryote",
+                    "correct": true
+                },
+                {
+                    "text": "c) Utviklingen av den prokaryote cellen skjedde etter fotosyntesen med oksygen i",
+                    "correct": false
+                },
+                {
+                    "text": "d) Prokaryote celler danner flercelleorganismer",
+                    "correct": false
+                },
+                {
+                    "text": "e) Mennesket er ikke avhengig av det prokaryote livet",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "2. Hva er riktig påstand om prokaryote og eukaryote celler?",
+            "answers": [
+                {
+                    "text": "a) Det er ingen vesensforskjell på de to celletypene, kun i størrelse",
+                    "correct": false
+                },
+                {
+                    "text": "b) Begge har ekte kjerner, men bare den prokaryote cellen inneholder DNA",
+                    "correct": false
+                },
+                {
+                    "text": "c) Kun den eukaryote cellen inneholder en ekte kjerne",
+                    "correct": true
+                },
+                {
+                    "text": "d) Begge utviklet seg i en atmosfære fri for oksygen",
+                    "correct": false
+                },
+                {
+                    "text": "e) Begge kan danne flercelleorganismer",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "3. Hvilke av følgende mikrober klassifiseres som en prokaryot organisme?",
+            "answers": [
+                {
+                    "text": "a) Sopp",
+                    "correct": false
+                },
+                {
+                    "text": "b) Virus",
+                    "correct": false
+                },
+                {
+                    "text": "c) Helminter",
+                    "correct": false
+                },
+                {
+                    "text": "d) Bakterier",
+                    "correct": true
+                },
+                {
+                    "text": "e) Antropoder",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "4. Hva er rett påstand om miljømikrober?",
+            "answers": [
+                {
+                    "text": "a) De lever i harmoni på menneskets hud eller slimhinner",
+                    "correct": false
+                },
+                {
+                    "text": "b) De er alle patogene",
+                    "correct": false
+                },
+                {
+                    "text": "c) De lever kun i vann",
+                    "correct": false
+                },
+                {
+                    "text": "d) De lever på steder og under forhold som ikke er tilpasset oss mennesker",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "5. Hva er ikke riktig påstand?",
+            "answers": [
+                {
+                    "text": "a) Alle prokaryote celler er bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "b) Bakterier utgjør grunnveven i alt liv på jorden",
+                    "correct": false
+                },
+                {
+                    "text": "c) Den eukaryote cellen utviklet seg etter at fotosyntesen oppstod",
+                    "correct": false
+                },
+                {
+                    "text": "d) Miljømikrober er særlig patogene for mennesker",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "6. Hva vil det si at miljømikrober er obligate apatogene? At de:",
+            "answers": [
+                {
+                    "text": "a) Kun angriper personer med nedsatt immunforsvar",
+                    "correct": false
+                },
+                {
+                    "text": "b) Fører til sykdom hos alle som får mikrobene på/i seg",
+                    "correct": false
+                },
+                {
+                    "text": "c) Ikke kan overleve på eller i oss mennesker og derfor aldri vil gi opphav til sykdom hos",
+                    "correct": true
+                },
+                {
+                    "text": "d) Kun er sykdomsfremkallende hos barn",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "7. Hva mener vi med normalfloraen i mikrobiologi?",
+            "answers": [
+                {
+                    "text": "a) De vanligste virus vi omgås til daglig og som ikke gjør oss syke",
+                    "correct": false
+                },
+                {
+                    "text": "b) De bakterier som normalt lever på huden og i slimhinner og som hos friske personer",
+                    "correct": true
+                },
+                {
+                    "text": "c) De vanligste bakteriene som normalt gir (lett) sykdom som vi etter hvert blir immune",
+                    "correct": false
+                },
+                {
+                    "text": "d) Alle vanlige parasitter som vi har i naturen og som vi omgås i dagliglivet",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "8. Hvilken påstand er riktig? En opportunistisk infeksjon:",
+            "answers": [
+                {
+                    "text": "a) Lar seg ikke behandle med antibiotika",
+                    "correct": false
+                },
+                {
+                    "text": "b) Oppstår alltid i etterkant av annen infeksjon",
+                    "correct": false
+                },
+                {
+                    "text": "c) Oppstår vanligvis fra normalfloraen",
+                    "correct": true
+                },
+                {
+                    "text": "d) Hemmer en normal infeksjon i å utvikle seg",
+                    "correct": false
+                },
+                {
+                    "text": "e) Står i opposisjon til en annen infeksjon",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "9. Hvilken påstand er riktig? Normalfloraen er:",
+            "answers": [
+                {
+                    "text": "a) De bakterier og virus som vi finner i naturen",
+                    "correct": false
+                },
+                {
+                    "text": "b) Bakterier som vanligvis lever på huden, i slimhinner, i tarmen, ytre genitalier og i",
+                    "correct": true
+                },
+                {
+                    "text": "c) Bakterier som lever på planter og dyr og som ikke er i stand til å skade mennesket",
+                    "correct": false
+                },
+                {
+                    "text": "d) De bakteriene som kun lever i tykktarmen hos dyr og mennesker",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "10. Hva er riktig påstand om obligate patogene mikrober?",
+            "answers": [
+                {
+                    "text": "a) De gir sykdom kun hos personer med nedsatt immunforsvar",
+                    "correct": false
+                },
+                {
+                    "text": "b) De gir infeksjoner bare hos pasienter innlagt på helseinstitusjoner (sykehus/sykehjem)",
+                    "correct": false
+                },
+                {
+                    "text": "c) De gir nesten alltid opphav til sykdom hos alle",
+                    "correct": true
+                },
+                {
+                    "text": "d) De er ufarlige for mennesker, men kan gjøre stor skade på husdyr",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}

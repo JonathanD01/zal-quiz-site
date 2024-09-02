@@ -1,0 +1,2592 @@
+{
+    "title": "MCQ treningsoppgaver i MIKROBIOLOGI",
+    "questions": [
+        {
+            "question": "1. Hva er riktig påstand?",
+            "answers": [
+                {
+                    "text": "a) Alle livsformer på jorda er bygget på grunnlag av den prokaryote cellen",
+                    "correct": false
+                },
+                {
+                    "text": "b) Alle bakterier er prokaryote",
+                    "correct": true
+                },
+                {
+                    "text": "c) Utviklingen av den prokaryote cellen skjedde etter fotosyntesen med oksygen i atmosfæren",
+                    "correct": false
+                },
+                {
+                    "text": "d) Prokaryote celler danner flercelleorganismer",
+                    "correct": false
+                },
+                {
+                    "text": "e) Mennesket er ikke avhengig av det prokaryote livet",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "2. Hva er riktig påstand om prokaryote og eukaryote celler?",
+            "answers": [
+                {
+                    "text": "a) Det er ingen vesensforskjell på de to celletypene, kun i størrelse",
+                    "correct": false
+                },
+                {
+                    "text": "b) Begge har ekte kjerner, men bare den prokaryote cellen inneholder DNA",
+                    "correct": false
+                },
+                {
+                    "text": "c) Kun den eukaryote cellen inneholder en ekte kjerne",
+                    "correct": true
+                },
+                {
+                    "text": "d) Begge utviklet seg i en atmosfære fri for oksygen",
+                    "correct": false
+                },
+                {
+                    "text": "e) Begge kan danne flercelleorganismer",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "3. Hvilke av følgende mikrober klassifiseres som en prokaryot organisme?",
+            "answers": [
+                {
+                    "text": "a) Sopp",
+                    "correct": false
+                },
+                {
+                    "text": "b) Virus",
+                    "correct": false
+                },
+                {
+                    "text": "c) Helminter",
+                    "correct": false
+                },
+                {
+                    "text": "d) Bakterier",
+                    "correct": true
+                },
+                {
+                    "text": "e) Antropoder",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "4. Hva er rett påstand om miljømikrober?",
+            "answers": [
+                {
+                    "text": "a) De lever i harmoni på menneskets hud eller slimhinner",
+                    "correct": false
+                },
+                {
+                    "text": "b) De er alle patogene",
+                    "correct": false
+                },
+                {
+                    "text": "c) De lever kun i vann",
+                    "correct": false
+                },
+                {
+                    "text": "d) De lever på steder og under forhold som ikke er tilpasset oss mennesker",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "5. Hva er ikke riktig påstand?",
+            "answers": [
+                {
+                    "text": "a) Alle prokaryote celler er bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "b) Bakterier utgjør grunnveven i alt liv på jorden",
+                    "correct": false
+                },
+                {
+                    "text": "c) Den eukaryote cellen utviklet seg etter at fotosyntesen oppstod",
+                    "correct": false
+                },
+                {
+                    "text": "d) Miljømikrober er særlig patogene for mennesker",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "6. Hva vil det si at miljømikrober er obligate apatogene? At de:",
+            "answers": [
+                {
+                    "text": "a) Kun angriper personer med nedsatt immunforsvar",
+                    "correct": false
+                },
+                {
+                    "text": "b) Fører til sykdom hos alle som får mikrobene på/i seg",
+                    "correct": false
+                },
+                {
+                    "text": "c) Ikke kan overleve på eller i oss mennesker og derfor aldri vil gi opphav til sykdom hos mennesker",
+                    "correct": true
+                },
+                {
+                    "text": "d) Kun er sykdomsfremkallende hos barn",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "7. Hva mener vi med normalfloraen i mikrobiologi?",
+            "answers": [
+                {
+                    "text": "a) De vanligste virus vi omgås til daglig og som ikke gjør oss syke",
+                    "correct": false
+                },
+                {
+                    "text": "b) De bakterier som normalt lever på huden og i slimhinner og som hos friske personer vanligvis ikke gir sykdom",
+                    "correct": true
+                },
+                {
+                    "text": "c) De vanligste bakteriene som normalt gir (lett) sykdom som vi etter hvert blir immune mot",
+                    "correct": false
+                },
+                {
+                    "text": "d) Alle vanlige parasitter som vi har i naturen og som vi omgås i dagliglivet",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "8. Hvilken påstand er riktig? En opportunistisk infeksjon:",
+            "answers": [
+                {
+                    "text": "a) Lar seg ikke behandle med antibiotika",
+                    "correct": false
+                },
+                {
+                    "text": "b) Oppstår alltid i etterkant av annen infeksjon",
+                    "correct": false
+                },
+                {
+                    "text": "c) Oppstår vanligvis fra normalfloraen",
+                    "correct": true
+                },
+                {
+                    "text": "d) Hemmer en normal infeksjon i å utvikle seg",
+                    "correct": false
+                },
+                {
+                    "text": "e) Står i opposisjon til en annen infeksjon",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "9. Hvilken påstand er riktig? Normalfloraen er:",
+            "answers": [
+                {
+                    "text": "a) De bakterier og virus som vi finner i naturen",
+                    "correct": false
+                },
+                {
+                    "text": "b) Bakterier som vanligvis lever på huden, i slimhinner, i tarmen, ytre genitalier og i munnhulen",
+                    "correct": true
+                },
+                {
+                    "text": "c) Bakterier som lever på planter og dyr og som ikke er i stand til å skade mennesket",
+                    "correct": false
+                },
+                {
+                    "text": "d) De bakteriene som kun lever i tykktarmen hos dyr og mennesker",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "10. Hva er riktig påstand om obligate patogene mikrober?",
+            "answers": [
+                {
+                    "text": "a) De gir sykdom kun hos personer med nedsatt immunforsvar",
+                    "correct": false
+                },
+                {
+                    "text": "b) De gir infeksjoner bare hos pasienter innlagt på helseinstitusjoner (sykehus/sykehjem)",
+                    "correct": false
+                },
+                {
+                    "text": "c) De gir nesten alltid opphav til sykdom hos alle",
+                    "correct": true
+                },
+                {
+                    "text": "d) De er ufarlige for mennesker, men kan gjøre stor skade på husdyr",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "11. Hva er riktig? Den opprinnelige atmosfæren på jorda inneholdt:",
+            "answers": [
+                {
+                    "text": "a) Oksygen og helium",
+                    "correct": false
+                },
+                {
+                    "text": "b) Nitrogen og oksygen",
+                    "correct": false
+                },
+                {
+                    "text": "c) Ikke oksygen",
+                    "correct": true
+                },
+                {
+                    "text": "d) Et beskyttende ozonlag",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "12. Hvilken påstand er riktig? Bakteriers cellevegg:",
+            "answers": [
+                {
+                    "text": "a) Har ingen funksjon annet enn å gi bakteriene sin form",
+                    "correct": false
+                },
+                {
+                    "text": "b) Er det samme som cellemembranen i eukaryote celler og fungerer på samme måte som",
+                    "correct": false
+                },
+                {
+                    "text": "c) Finner vi bare hos gram negative bakterier der de fungerer som festeanordninger til",
+                    "correct": false
+                },
+                {
+                    "text": "d) Ligger utenfor bakterienes cellemembran og beskytter bakteriene mot forandringer i",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "13. Enkelte bakterietyper har evne til å danne en kapsel. Hvilken påstand er ikke riktig?",
+            "answers": [
+                {
+                    "text": "a) Bidra til at bakterien fester seg til vertens epitelceller",
+                    "correct": false
+                },
+                {
+                    "text": "b) Øke faren for uttørking av bakterien",
+                    "correct": true
+                },
+                {
+                    "text": "c) Beskytte bakterien mot angrep fra antibiotika",
+                    "correct": false
+                },
+                {
+                    "text": "d) Påvirke bakteriens evne til å fremkalle sykdom",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "14. Hvilken funksjon har bakterienes flageller? De:",
+            "answers": [
+                {
+                    "text": "a) Fester bakterien til omgivelsene",
+                    "correct": false
+                },
+                {
+                    "text": "b) Sørger for bevegelse for bakterien",
+                    "correct": true
+                },
+                {
+                    "text": "c) Ødelegger vertsceller",
+                    "correct": false
+                },
+                {
+                    "text": "d) Er et organ for å penetrere vertsceller",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "15. Hva er rett påstand om fimbrier? De:",
+            "answers": [
+                {
+                    "text": "a) Fungerer som DNA for bakterien",
+                    "correct": false
+                },
+                {
+                    "text": "b) Er viktige virulensfaktorer",
+                    "correct": true
+                },
+                {
+                    "text": "c) Er uten betydning, kun rester fra urcellen",
+                    "correct": false
+                },
+                {
+                    "text": "d) Finnes på alle bakterier",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "16. Noen bakterier har fimbrier. Hva er ikke riktig påstand om fimbrier?",
+            "answers": [
+                {
+                    "text": "a) De danner sporer",
+                    "correct": false
+                },
+                {
+                    "text": "b) De muterer til virus",
+                    "correct": true
+                },
+                {
+                    "text": "c) De kan feste bakterien til andre bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "d) De har ingen sykdomsfremkallende effekt",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "17. Hvilken påstand er riktig om bakteriesporer?",
+            "answers": [
+                {
+                    "text": "a) De er ekstremt motstandsdyktige mot uttørking, desinfeksjon og varme",
+                    "correct": true
+                },
+                {
+                    "text": "b) De inneholder virus og er derfor særlig farlige",
+                    "correct": false
+                },
+                {
+                    "text": "c) De har kort levetid, inntil få timer, unntatt i kaldt vann",
+                    "correct": false
+                },
+                {
+                    "text": "d) De dør raskt under uttørking",
+                    "correct": false
+                },
+                {
+                    "text": "e) De tåler ikke temperatur under 0 grader C",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "18. Hva er riktig påstand om sporedannende bakterier?",
+            "answers": [
+                {
+                    "text": "a) De finnes kun blant gram-negative bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "b) De kan innta en inaktiv, «sovende» form over flere tiår",
+                    "correct": true
+                },
+                {
+                    "text": "c) De er ikke humanpatogene",
+                    "correct": false
+                },
+                {
+                    "text": "d) De kan ikke drepes i en steriliseringsprosess",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "19. Hvilken påstand om bakteriesporer er ikke riktig?",
+            "answers": [
+                {
+                    "text": "a) De dannes inni bakteriene",
+                    "correct": false
+                },
+                {
+                    "text": "b) De frisettes først når bakterien dør",
+                    "correct": false
+                },
+                {
+                    "text": "c) De er svært motstandsdyktige mot desinfeksjon, koking og inntørking",
+                    "correct": false
+                },
+                {
+                    "text": "d) De dannes hos Gram-negative bakterier",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "20. Hva er riktig svar? Sporedannende bakterier finner vi kun blant:",
+            "answers": [
+                {
+                    "text": "a) Grampositive bakterier",
+                    "correct": true
+                },
+                {
+                    "text": "b) Gramnegative bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "c) Anaerobe bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "d) Prioner",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "21. Ved gramfarging vil gramnegative bakterier bli:",
+            "answers": [
+                {
+                    "text": "a) Gule",
+                    "correct": false
+                },
+                {
+                    "text": "b) Rosa",
+                    "correct": true
+                },
+                {
+                    "text": "c) Grønne",
+                    "correct": false
+                },
+                {
+                    "text": "d) Lilla",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "22. Ved gramfarging vil grampositive bakterier bli:",
+            "answers": [
+                {
+                    "text": "a) Gule",
+                    "correct": false
+                },
+                {
+                    "text": "b) Rosa",
+                    "correct": false
+                },
+                {
+                    "text": "c) Grønne",
+                    "correct": false
+                },
+                {
+                    "text": "d) Lilla",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "23. Bakteriene har en cellevegg som blant annet består av ulike mengder av et stoff som gjør",
+            "answers": [
+                {
+                    "text": "a) Lipidoglykan",
+                    "correct": false
+                },
+                {
+                    "text": "b) Glykanlipid",
+                    "correct": false
+                },
+                {
+                    "text": "c) Peptidoglykan",
+                    "correct": true
+                },
+                {
+                    "text": "d) Fosfolipid",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "24. Vitenskapelig sett er cellenes eneste hensikt å:",
+            "answers": [
+                {
+                    "text": "a) Dø slik at nye celler kan overta",
+                    "correct": false
+                },
+                {
+                    "text": "b) Sørge for at arvematerialet deres aldri dør ut",
+                    "correct": true
+                },
+                {
+                    "text": "c) Mutere seg og bli mange",
+                    "correct": false
+                },
+                {
+                    "text": "d) Bli resistente",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "25. Hva kalles en feilkopiering av arvematerialet?",
+            "answers": [
+                {
+                    "text": "a) Celledeling",
+                    "correct": false
+                },
+                {
+                    "text": "b) Tilbakegang",
+                    "correct": false
+                },
+                {
+                    "text": "c) Mutasjon",
+                    "correct": true
+                },
+                {
+                    "text": "d) Stagnasjon",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "26. En mutasjon er:",
+            "answers": [
+                {
+                    "text": "a) En kopiering av arvematerialet",
+                    "correct": false
+                },
+                {
+                    "text": "b) En dobling av arvematerialet",
+                    "correct": false
+                },
+                {
+                    "text": "c) Når arvematerialet dør ut",
+                    "correct": false
+                },
+                {
+                    "text": "d) En feilkopiering av arvematerialet",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "27. Hva er bakteriofager?",
+            "answers": [
+                {
+                    "text": "a) Bakterier som spiser andre bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "b) Næring som får bakterien til å vokse",
+                    "correct": false
+                },
+                {
+                    "text": "c) Virus som infiserer bakterier",
+                    "correct": true
+                },
+                {
+                    "text": "d) Cellekjerner som sprekker",
+                    "correct": false
+                },
+                {
+                    "text": "e) Prioner som styrker bakteriens motstandskraft",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "28. Aerobe bakterier trenger:",
+            "answers": [
+                {
+                    "text": "a) Rikelig med væske",
+                    "correct": false
+                },
+                {
+                    "text": "b) Svært lav temperatur",
+                    "correct": false
+                },
+                {
+                    "text": "c) Fullstendig fravær av oksygen",
+                    "correct": false
+                },
+                {
+                    "text": "d) Oksygen tilsvarende romluft",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "29. Hva vil det si at en bakterie er obligat anaerob? At den:",
+            "answers": [
+                {
+                    "text": "a) Må ha oksygen for å leve",
+                    "correct": false
+                },
+                {
+                    "text": "b) Ikke tåler oksygen",
+                    "correct": true
+                },
+                {
+                    "text": "c) Produserer oksygen",
+                    "correct": false
+                },
+                {
+                    "text": "d) Kan leve både med og uten oksygen",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "30. Kuleformede bakterier som ligger sammen i lengre kjeder, kalles:",
+            "answers": [
+                {
+                    "text": "a) Stafylokokker",
+                    "correct": false
+                },
+                {
+                    "text": "b) Diplokokker",
+                    "correct": false
+                },
+                {
+                    "text": "c) Streptokokker",
+                    "correct": true
+                },
+                {
+                    "text": "d) Spirokokker",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "31. Kuleformede bakterier, organisert i klaser, kalles?",
+            "answers": [
+                {
+                    "text": "a) Stafylokokker",
+                    "correct": true
+                },
+                {
+                    "text": "b) Streptokokker",
+                    "correct": false
+                },
+                {
+                    "text": "c) Diplokokker",
+                    "correct": false
+                },
+                {
+                    "text": "d) Polykokker",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "32. Hva kjennetegner fakultative bakterier?",
+            "answers": [
+                {
+                    "text": "a) De må ha oksygengass for å leve",
+                    "correct": false
+                },
+                {
+                    "text": "b) De dør ved tilgang på oksygengass",
+                    "correct": false
+                },
+                {
+                    "text": "c) De kan leve i omgivelser både med og uten oksygengass",
+                    "correct": true
+                },
+                {
+                    "text": "d) De må ha ren nitrogengass for å leve",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "33. De fleste bakterier som er patogene for mennesker, dør når:",
+            "answers": [
+                {
+                    "text": "a) Temperaturen er under 0 grader C",
+                    "correct": false
+                },
+                {
+                    "text": "b) Cytyoplasmaet fryser",
+                    "correct": false
+                },
+                {
+                    "text": "c) Temperaturen nærmer seg 60 grader C",
+                    "correct": true
+                },
+                {
+                    "text": "d) Temperaturen overstiger 40 grader C",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "34. Hva er riktig? Endotoksiner:",
+            "answers": [
+                {
+                    "text": "a) Kalles også lipopolysakkarid",
+                    "correct": true
+                },
+                {
+                    "text": "b) Er et annet ord for antibiotika",
+                    "correct": false
+                },
+                {
+                    "text": "c) Kalles også endopolysakkarid",
+                    "correct": false
+                },
+                {
+                    "text": "d) Kalles også tokso-lipider",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "35. Hva er feil? Eksotoksiner:",
+            "answers": [
+                {
+                    "text": "a) Er giftstoffer som bakteriene produserer og skiller ut til det omkringliggende miljøet",
+                    "correct": false
+                },
+                {
+                    "text": "b) Kan gi botulisme og stivkrampe, som hører til de sterkeste av alle kjente toksiner",
+                    "correct": false
+                },
+                {
+                    "text": "c) Har ingen antigen effekt",
+                    "correct": true
+                },
+                {
+                    "text": "d) Kan gi skade/sykdom i andre organer enn der toksinene er produsert",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "36. Av bakterielle toksiner finner vi 2 hovedtyper; endotoksiner og eksotoksiner. Hvilken",
+            "answers": [
+                {
+                    "text": "a) De er uspesifikke giftstoffer",
+                    "correct": false
+                },
+                {
+                    "text": "b) De skiller seg ikke fra endotoksiner når det gjelder giftstoffer",
+                    "correct": false
+                },
+                {
+                    "text": "c) De er spesifikke giftstoffer",
+                    "correct": true
+                },
+                {
+                    "text": "d) De består av lipopolysakkarider",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "37. Hva er riktig? Endotoksiner:",
+            "answers": [
+                {
+                    "text": "a) Produseres av kroppen for å bekjempe mikrober",
+                    "correct": false
+                },
+                {
+                    "text": "b) Frigjøres i store mengder fra bakteriene ved eksocytose",
+                    "correct": false
+                },
+                {
+                    "text": "c) Er like toksiske som eksotoksiner",
+                    "correct": false
+                },
+                {
+                    "text": "d) Frigjøres når gram-negative bakterier dør og celleveggen går i oppløsning",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "38. Alt liv og all vekst er avhengig av:",
+            "answers": [
+                {
+                    "text": "a) Oksygen",
+                    "correct": false
+                },
+                {
+                    "text": "b) pH mellom 4-8",
+                    "correct": false
+                },
+                {
+                    "text": "c) Tilgjengelig vann (vannaktivitet)",
+                    "correct": true
+                },
+                {
+                    "text": "d) Relativ stabil temperatur",
+                    "correct": false
+                },
+                {
+                    "text": "e) En form for proteintilgang",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "39. Hvilken av påstandene under er ikke riktig?",
+            "answers": [
+                {
+                    "text": "a) Etter gjennomgått infeksjonssykdom, kan enkelte mikrober forbli i kroppen i lang tid i form av en asymptomatisk latent infeksjon.",
+                    "correct": false
+                },
+                {
+                    "text": "b) For at en bakteriell infeksjon skal gi skade, må både mikrobens invasivitet (evne til å invadere og spre seg i et vev) og toksisitet (evne til å spre giftstoffer) være til stede i like stor grad",
+                    "correct": true
+                },
+                {
+                    "text": "c) Virus er alltid avhengig av å kunne formere seg intracellulært, men ikke i enhver celle.",
+                    "correct": false
+                },
+                {
+                    "text": "d) En patogen mikrobe er aldri patogen for alle potensielle verter.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "40. Stammer av patogene mikrober kan være antivirulente. Hva er ikke riktig påstand om slike stammer? De:",
+            "answers": [
+                {
+                    "text": "a) Gir mild eller ingen sykdom hos mennesker",
+                    "correct": false
+                },
+                {
+                    "text": "b) Gir alvorlig sykdom hos mennesker",
+                    "correct": true
+                },
+                {
+                    "text": "c) Gir opphav til det immunologiske forsvaret hos pasienten",
+                    "correct": false
+                },
+                {
+                    "text": "d) Brukes ofte i framstilling av vaksiner",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "41. Stammer av patogene mikrober kan være antivirulente. Hva er riktig påstand om slike stammer? De:",
+            "answers": [
+                {
+                    "text": "a) Gir mild eller ingen sykdom hos mennesker",
+                    "correct": true
+                },
+                {
+                    "text": "b) Gir alvorlig sykdom hos mennesker",
+                    "correct": false
+                },
+                {
+                    "text": "c) Gir alltid kraftige allergiske reaksjoner hos dem som smittes",
+                    "correct": false
+                },
+                {
+                    "text": "d) Kan ikke brukes i framstilling av vaksiner",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "42. Hva er riktig påstand? Virulensfaktorer:",
+            "answers": [
+                {
+                    "text": "a) Er faktorer som påvirker mikrobers sykdomsfremkallende evner.",
+                    "correct": true
+                },
+                {
+                    "text": "b) Er faktorer som dreper mikrobers sykdomsfremkallende evner.",
+                    "correct": false
+                },
+                {
+                    "text": "c) Angir hvilke medikamenter som kan benyttes i behandling av mikroorganismer.",
+                    "correct": false
+                },
+                {
+                    "text": "d) Angir hvilke medikamenter som ikke kan benyttes i behandling av mikroorganismer.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "43. Hva er ikke et eksempel på virulensfaktorer hos bakterier?",
+            "answers": [
+                {
+                    "text": "a) Flageller",
+                    "correct": false
+                },
+                {
+                    "text": "b) Fimbrier",
+                    "correct": false
+                },
+                {
+                    "text": "c) Virus",
+                    "correct": true
+                },
+                {
+                    "text": "d) Kapsel",
+                    "correct": false
+                },
+                {
+                    "text": "e) Eksotoksiner",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "44. Hva er feil påstand?",
+            "answers": [
+                {
+                    "text": "a) Menneskehudens pH rundt 5,5 er en viktig forsvarsmekanisme mot bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "b) De fleste bakterier dør når temperaturen nærmer seg 60 grader C",
+                    "correct": false
+                },
+                {
+                    "text": "c) Ingen bakterier vokser når cytoplasmaet fryser",
+                    "correct": false
+                },
+                {
+                    "text": "d) Nedfrysing er en steriliseringsmetode",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "45. Hvilket utsagn er feil?",
+            "answers": [
+                {
+                    "text": "a) Patogenese er prosessen mellom en mikrobe og en vert som resulterer i skade eller",
+                    "correct": false
+                },
+                {
+                    "text": "b) Bakterienes tilgang til kroppen skjer via hud eller slimhinner",
+                    "correct": false
+                },
+                {
+                    "text": "c) Etter at en bakterie har adherert til en slimhinne, formerer den seg gjennom en prosess",
+                    "correct": false
+                },
+                {
+                    "text": "d) Endotoksiner er mer toksiske enn eksotoksiner",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "46. Hvilken påstand er riktig om virus?",
+            "answers": [
+                {
+                    "text": "a) Virus er en type bakteriespore",
+                    "correct": false
+                },
+                {
+                    "text": "b) Virus er ikke-levende smittestoff som formerer seg inne i celler",
+                    "correct": true
+                },
+                {
+                    "text": "c) Virus oppholder seg fortrinnsvis i blodplasma",
+                    "correct": false
+                },
+                {
+                    "text": "d) Alle alternativene er riktige",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "47. Hvordan formerer virus seg?",
+            "answers": [
+                {
+                    "text": "a) Ved todeling som bakterier og andre menneskeceller",
+                    "correct": false
+                },
+                {
+                    "text": "b) Ved å frigjøre arvestoffet sitt inni en vertscelle og ved hjelp av vertscellens bio-maskineri produseres flere virus inni vertscellen",
+                    "correct": true
+                },
+                {
+                    "text": "c) Virus formerer seg ved seksuell kontakt med andre virus",
+                    "correct": false
+                },
+                {
+                    "text": "d) Virus formerer seg kun inni bakterier",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "48. Hva er ikke riktig når det gjelder virus?",
+            "answers": [
+                {
+                    "text": "a) Virus er partikler med arvestoff, men uten eget apparat for metabolisme",
+                    "correct": false
+                },
+                {
+                    "text": "b) Etter gjennomgått førstegangsinfeksjon, kan virus forbli i organismen i latent form",
+                    "correct": false
+                },
+                {
+                    "text": "c) Formering av virus er avhengig av levende celler",
+                    "correct": false
+                },
+                {
+                    "text": "d) Virus kan ikke forårsake kreft",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "49. Hva er ikke riktig når det gjelder virus?",
+            "answers": [
+                {
+                    "text": "a) Ved flere krefttyper spiller virus en viktig rolle",
+                    "correct": false
+                },
+                {
+                    "text": "b) Virus forekommer kun hos dyr og mennesker",
+                    "correct": true
+                },
+                {
+                    "text": "c) Arvestoffet hos virus består enten av DNA eller RNA",
+                    "correct": false
+                },
+                {
+                    "text": "d) Ekstracellulært er virus en nøytral partikkel",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "50. Hvilken av sykdomseffektene under stemmer ikke med virusangrep?",
+            "answers": [
+                {
+                    "text": "a) Motoriske nerveceller som angripes av virus, kan gi lammelser",
+                    "correct": false
+                },
+                {
+                    "text": "b) Virus som ligger latente i celler, kan reaktiveres ved gitte påvirkninger og gi sykdom senere",
+                    "correct": false
+                },
+                {
+                    "text": "c) Enkelte virus kan forandre egenskaper ved cellen og føre til kreft",
+                    "correct": false
+                },
+                {
+                    "text": "d) Virussykdom kan ikke gi hudutslett",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "51. Hva er riktig påstand om virus?",
+            "answers": [
+                {
+                    "text": "a) Virus spiller ingen rolle når det gjelder utvikling av kreft",
+                    "correct": false
+                },
+                {
+                    "text": "b) Virus forekommer kun hos dyr og mennesker",
+                    "correct": false
+                },
+                {
+                    "text": "c) Arvestoffet hos virus består enten av DNA eller RNA",
+                    "correct": true
+                },
+                {
+                    "text": "d) Virus er forstadiet til en primitiv bakterie",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "52. Hva er ikke riktig påstand om virus?",
+            "answers": [
+                {
+                    "text": "a) Ekstracellulært er virus en nøytral partikkel uten funksjon",
+                    "correct": false
+                },
+                {
+                    "text": "b) Virus er partikler med arvestoff, men uten eget apparat for metabolisme",
+                    "correct": false
+                },
+                {
+                    "text": "c) Virus kan identifiseres i lysmikroskop",
+                    "correct": true
+                },
+                {
+                    "text": "d) Enkelte virusnukleinsyrer kan påvirke cellens eget arvestoff og slik forandre viktige egenskaper ved cellen",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "53. Hva er riktig påstand om virus?",
+            "answers": [
+                {
+                    "text": "a) Latente virus i menneskekroppen kan aktiveres ved bestråling eller annen påvirkning",
+                    "correct": true
+                },
+                {
+                    "text": "b) Arvestoffet hos virus består både av DNA og RNA",
+                    "correct": false
+                },
+                {
+                    "text": "c) Humant papillomvirus kan ikke føre til kreft",
+                    "correct": false
+                },
+                {
+                    "text": "d) Virus kan formere seg uavhengig av levende celler",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "54. Avhengig av lokaliseringen, deles mykoser (soppsykdom) inn i tre typer. Hvilken er ikke riktig?",
+            "answers": [
+                {
+                    "text": "a) Overfladiske mykoser – soppen vokser på kroppens overflater",
+                    "correct": false
+                },
+                {
+                    "text": "b) Subkutane mykoser – soppen vokser i dypere lag av huden",
+                    "correct": false
+                },
+                {
+                    "text": "c) Ekstroverte mykoser – soppen vokser utenfor kroppen",
+                    "correct": true
+                },
+                {
+                    "text": "d) Systemiske mykoser – soppen kommer over i blodet og kan spres til ulike interne organer",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "55. Hvilken påstand om sopp er ikke riktig?",
+            "answers": [
+                {
+                    "text": "a) Sopp lever på organisk materiale",
+                    "correct": false
+                },
+                {
+                    "text": "b) Mennesket er en nødvendig vert for sopp",
+                    "correct": true
+                },
+                {
+                    "text": "c) Sopp har stor kommersiell samfunnsbetydning f.eks. i forbindelse med den",
+                    "correct": false
+                },
+                {
+                    "text": "d) Praktisk talt alle patogene sopparter i Norge kan betraktes som opportunistiske",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "56. Hvilken er ikke en kjent sykdomstype forårsaket av sopp?",
+            "answers": [
+                {
+                    "text": "a) Infeksjon",
+                    "correct": false
+                },
+                {
+                    "text": "b) Allergi",
+                    "correct": false
+                },
+                {
+                    "text": "c) Forgiftning",
+                    "correct": false
+                },
+                {
+                    "text": "d) Gul feber",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "57. Hva er feil påstand om sopp?",
+            "answers": [
+                {
+                    "text": "a) De er eukaryote organismer",
+                    "correct": false
+                },
+                {
+                    "text": "b) Sopp smitter enten endogent (fra koppens egen hud/slimhinner) eller eksogent (fra det",
+                    "correct": false
+                },
+                {
+                    "text": "c) De fleste sopparter smitter ikke direkte mellom mennesker",
+                    "correct": false
+                },
+                {
+                    "text": "d) Soppinfeksjoner er ofte plagsomme, men aldri alvorlige for mennesker",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "58. Hva er riktig påstand om sopp?",
+            "answers": [
+                {
+                    "text": "a) Mennesket er alltid en nødvendig vert for sopp",
+                    "correct": false
+                },
+                {
+                    "text": "b) Sopp er prokaryotiske organismer",
+                    "correct": false
+                },
+                {
+                    "text": "c) Patogene sopparter øker parallelt med økende andel mennesker med nedsatt immunforsvar",
+                    "correct": true
+                },
+                {
+                    "text": "d) Sopp smitter kun eksogent (fra det ytre miljøet)",
+                    "correct": false
+                },
+                {
+                    "text": "e) Soppinfeksjoner gir aldri alvorlig sykdom hos mennesker",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "59. Det finnes tre hovedgrupper av parasitter. Hvilken er ikke riktig?",
+            "answers": [
+                {
+                    "text": "a) Protozoer (eukaryote «encelledyr»)",
+                    "correct": false
+                },
+                {
+                    "text": "b) Sopp (gjær og muggsopp)",
+                    "correct": true
+                },
+                {
+                    "text": "c) Artropoder (leddyr, insekter)",
+                    "correct": false
+                },
+                {
+                    "text": "d) Helminter (mark, orm)",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "60. Hva er en vektor?",
+            "answers": [
+                {
+                    "text": "a) En måleenhet for svært lav vekt",
+                    "correct": false
+                },
+                {
+                    "text": "b) Et instrument som brukes til bestemmelse av mengde giftstoff en parasitt har",
+                    "correct": false
+                },
+                {
+                    "text": "c) En vert der kjønnet formering finner sted",
+                    "correct": false
+                },
+                {
+                    "text": "d) En organisme som er infisert med en mikrobe og som transporterer den videre til en ny vert",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "61. Hva er feil påstand om parasitter?",
+            "answers": [
+                {
+                    "text": "a) Trichomonas vaginalis er en protozo",
+                    "correct": false
+                },
+                {
+                    "text": "b) Noen parasitter har bare èn spesifikk vert, mens andre har flere",
+                    "correct": false
+                },
+                {
+                    "text": "c) De fleste helminter (ormer, mark) utvikles til infeksjonsdyktige former kun utenfor",
+                    "correct": false
+                },
+                {
+                    "text": "d) Smitte med parasitter kan skje ved hjelp av vektorer, som regel et insekt",
+                    "correct": false
+                },
+                {
+                    "text": "e) Protozosykdommer utvikles uavhengig av menneskers immunforsvar",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "62. Hvilken smittevei har Plasmodium-parasitten som gir sykdommen malaria?",
+            "answers": [
+                {
+                    "text": "a) Dråpesmitte",
+                    "correct": false
+                },
+                {
+                    "text": "b) Kontaktsmitte",
+                    "correct": false
+                },
+                {
+                    "text": "c) Vektorbåren smitte",
+                    "correct": true
+                },
+                {
+                    "text": "d) Luftbåren smitte",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "63. Betegnelsen prion er en forkortelse for:",
+            "answers": [
+                {
+                    "text": "a) Proteinindusert allergi",
+                    "correct": false
+                },
+                {
+                    "text": "b) Protein prioritert nevron",
+                    "correct": false
+                },
+                {
+                    "text": "c) Proteinaktig infeksiøs agens",
+                    "correct": true
+                },
+                {
+                    "text": "d) Proteinholdig bakterieinfeksjon",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "64. Hva er et prion?",
+            "answers": [
+                {
+                    "text": "a) Et sykdomsfremkallende og atypisk protein",
+                    "correct": true
+                },
+                {
+                    "text": "b) En bakteriespore",
+                    "correct": false
+                },
+                {
+                    "text": "c) En type virus som infiserer nervesystemet",
+                    "correct": false
+                },
+                {
+                    "text": "d) En bakterie som invaderer gliacellene i sentralnervesystemet",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "65. Sykdommene skrapesyke, kugalskap og Creutzfeldt-Jakobs sykdom skyldes:",
+            "answers": [
+                {
+                    "text": "a) Anaerobe bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "b) Virus",
+                    "correct": false
+                },
+                {
+                    "text": "c) Sopp",
+                    "correct": false
+                },
+                {
+                    "text": "d) Prioner",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "66. Prionproteinet PrP finnes normalt hos mennesker og dyr. En sjelden gang kan",
+            "answers": [
+                {
+                    "text": "a) I en del tilfeller synes arv å spille en rolle",
+                    "correct": false
+                },
+                {
+                    "text": "b) Spontan endring",
+                    "correct": false
+                },
+                {
+                    "text": "c) Inntak av infiserte matvarer",
+                    "correct": false
+                },
+                {
+                    "text": "d) Alle alternativene er riktige",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "67. Hva er riktig påstand om prion-sykdommer?",
+            "answers": [
+                {
+                    "text": "a) Gir uspesifikke forandringer i cellene og vevet i muskel- og skjelettsystemet",
+                    "correct": false
+                },
+                {
+                    "text": "b) Gir kraftig inflammasjon i angrepne organer",
+                    "correct": false
+                },
+                {
+                    "text": "c) Endelig diagnose kan kun stilles ved obduksjon",
+                    "correct": true
+                },
+                {
+                    "text": "d) Kan behandles, men krever lan                                                                                                     g",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "68. Hvilket mikrobepar har ikke egen forbrenning?",
+            "answers": [
+                {
+                    "text": "a) Bakterier og virus",
+                    "correct": false
+                },
+                {
+                    "text": "b) Prioner og amøber",
+                    "correct": false
+                },
+                {
+                    "text": "c) Sopp og bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "d) Prioner og virus",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "69. Hva er riktig? De mikrobene som er mest avhengig av å ha tilgang på mange mennesker som lever tett sammen, er mikrober som:",
+            "answers": [
+                {
+                    "text": "a) Har mennesket som eneste vert",
+                    "correct": true
+                },
+                {
+                    "text": "b) Er årsak til kroniske infeksjoner",
+                    "correct": false
+                },
+                {
+                    "text": "c) Fører til latente infeksjoner eller bærertilstander",
+                    "correct": false
+                },
+                {
+                    "text": "d) Ikke gir opphav til livsvarig immunitet hos pasienten",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "70. Hva er ikke riktig? De mikrobene som er mest avhengig av å ha tilgang på mange mennesker som lever tett sammen, er de som:",
+            "answers": [
+                {
+                    "text": "a) Har mennesker som eneste vert",
+                    "correct": false
+                },
+                {
+                    "text": "b) Er årsak til akutte infeksjoner som går fort over",
+                    "correct": false
+                },
+                {
+                    "text": "c) Fører til latente infeksjoner eller bærertilstander",
+                    "correct": true
+                },
+                {
+                    "text": "d) Gir opphav til livsvarig immunitet hos pasienten",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "71. Hva er zoonose?",
+            "answers": [
+                {
+                    "text": "a) En type plante med giftstoffer som virker lammende på nervesystemet hos mennesker",
+                    "correct": false
+                },
+                {
+                    "text": "b) Sykdom som smitter mellom virveldyr og som kan overføres til mennesker",
+                    "correct": true
+                },
+                {
+                    "text": "c) En dyrehage (på engelsk zoo)",
+                    "correct": false
+                },
+                {
+                    "text": "d) Læren om dyr",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "72. Hva er ikke en kjent årsak til at infeksjoner kan få nytt fotfeste i verden?",
+            "answers": [
+                {
+                    "text": "a) Klima- og økologiske endringer",
+                    "correct": false
+                },
+                {
+                    "text": "b) Global næringsmiddelhandel",
+                    "correct": false
+                },
+                {
+                    "text": "c) Reising/turisme",
+                    "correct": false
+                },
+                {
+                    "text": "d) Kostholdstilskudd (svekker immunsystemet)",
+                    "correct": false
+                },
+                {
+                    "text": "e) Antibiotikaresistens",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "73. Hva er ikke en årsak til at infeksjoner kan få nytt fotfeste i verden?",
+            "answers": [
+                {
+                    "text": "a) Vegetarkost (gir nedsatt immunforsvar pga. manglende proteiner)",
+                    "correct": true
+                },
+                {
+                    "text": "b) En stadig eldre befolkning pga. økt levealder",
+                    "correct": false
+                },
+                {
+                    "text": "c) Antibiotikaresistens",
+                    "correct": false
+                },
+                {
+                    "text": "d) Sosial og politisk uro/krig",
+                    "correct": false
+                },
+                {
+                    "text": "e) Klima- og økologiske endringer",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "74. Hva er ikke en årsak til at infeksjoner kan få nytt fotfeste i verden?",
+            "answers": [
+                {
+                    "text": "a) Vaksinasjon (svekker immunsystemet)",
+                    "correct": true
+                },
+                {
+                    "text": "b) Økt levealder med en stadig eldre befolkning",
+                    "correct": false
+                },
+                {
+                    "text": "c) Sosial og politisk uro/krig",
+                    "correct": false
+                },
+                {
+                    "text": "d) Klima- og økologiske endringer",
+                    "correct": false
+                },
+                {
+                    "text": "e) Global næringsmiddelhandel",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "75. Hva er riktig påstand om infeksjonssykdommer?",
+            "answers": [
+                {
+                    "text": "a) Infeksjonssykdommene vil trolig utryddes etter få år ved hjelp av stadig bedre medisiner",
+                    "correct": false
+                },
+                {
+                    "text": "b) Det går flere år mellom hver gang det dukker opp en ny og alvorlig infeksjonssykdom",
+                    "correct": false
+                },
+                {
+                    "text": "c) «Gamle» sykdommer som tuberkulose og kikhoste er praktisk talt utryddet",
+                    "correct": false
+                },
+                {
+                    "text": "d) Hvert år dør flere millioner barn under 5 år av infeksjonssykdommer",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "76. Hva er riktig påstand om infeksjoner?",
+            "answers": [
+                {
+                    "text": "a) Behovet for renslighet og hygiene ligger i genene våre",
+                    "correct": false
+                },
+                {
+                    "text": "b) Tuberkelbakterien kan ikke overleve utenfor mennesket",
+                    "correct": false
+                },
+                {
+                    "text": "c) Alle infeksjoner har i utgangspunktet vært zoonoser",
+                    "correct": true
+                },
+                {
+                    "text": "d) Etablering av jordbruket fjernet feil- og underernæring blant menneskene",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "77. Hva er ikke riktig påstand om normalfloraen?",
+            "answers": [
+                {
+                    "text": "a) Normalfloraen består hovedsakelig av bakterier, men også sopp og protozoer i et",
+                    "correct": false
+                },
+                {
+                    "text": "b) Normalfloraen aktiverer av og til immunsystemet vårt",
+                    "correct": false
+                },
+                {
+                    "text": "c) Vaginal fødsel gir det nyfødte barnet et større mangfold av bakterier i tarmen noe",
+                    "correct": false
+                },
+                {
+                    "text": "d) Ingen mikrober kan infisere barnet i fosterlivet",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "78. Hva er feil påstand om normalfloraen?",
+            "answers": [
+                {
+                    "text": "a) Barn har fra 2 års alderen utviklet en nesten «voksen» normalflora.",
+                    "correct": false
+                },
+                {
+                    "text": "b) Et liv uten normalflora er mer farefylt enn et liv med slik flora",
+                    "correct": false
+                },
+                {
+                    "text": "c) Dersom deler av normalfloraen får tilgang til sterile deler av kroppen, vil det aldri utgjøre noe fare siden dette er kroppens egne beskyttelsesmikrober",
+                    "correct": true
+                },
+                {
+                    "text": "d) Bredspektret antibiotika kan forårsake dramatisk reduksjon av normalfloraen i tarmen",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "79. Hva er riktig påstand om tarmfloraen?",
+            "answers": [
+                {
+                    "text": "a) Ingen bakterier kan overleve i magesekken til mennesket på grunn av den sure",
+                    "correct": false
+                },
+                {
+                    "text": "b) I munnhulen vår er det like mange forskjellige mikrobearter som i tykktarmen",
+                    "correct": true
+                },
+                {
+                    "text": "c) I normalfloraen i tykktarmen er de fleste mikrobene aerobe",
+                    "correct": false
+                },
+                {
+                    "text": "d) Tarmfloraen er lik hos alle mennesker, enten man er slank eller overvektig",
+                    "correct": false
+                },
+                {
+                    "text": "e) Bruk av antibiotika har ingen innvirkning på tarmfloraen",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "80. Hva er riktig påstand om biofilm?",
+            "answers": [
+                {
+                    "text": "a) Biofilm kan kun dannes på levende (biotiske) overflater",
+                    "correct": false
+                },
+                {
+                    "text": "b) Biofilm utgjør ingen problemer når det gjelder medisinsk utstyr",
+                    "correct": false
+                },
+                {
+                    "text": "c) Biofilm er et mikrobebelegg som kan dannes på fuktige overflater",
+                    "correct": true
+                },
+                {
+                    "text": "d) Biofilm gir ingen beskyttelse for bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "e) Biofilm er en undervisningsfilm om biologi",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "81. Hva er ikke riktig påstand om behandlingsformen FMT?",
+            "answers": [
+                {
+                    "text": "a) FMT står for Fekal - Mikrobiota-Transplantasjon",
+                    "correct": false
+                },
+                {
+                    "text": "b) Hensikten med FMT er å få tarmfloraen i balanse",
+                    "correct": false
+                },
+                {
+                    "text": "c) Ved FMT tilføres pasienten fersk, lagret eller dyrket avføring fra en frisk giver",
+                    "correct": false
+                },
+                {
+                    "text": "d) Avføringen kan kun overføres via munn- eller nesesonde",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "82. Samlivet mellom små og store organismer betegnes i vid forstand som symbiose. Vi har",
+            "answers": [
+                {
+                    "text": "a) Parasittisme: Er til fordel for den ene parten på bekostning av den andre",
+                    "correct": false
+                },
+                {
+                    "text": "b) Mutualisme: Er til fordel for begge parter",
+                    "correct": false
+                },
+                {
+                    "text": "c) Kommersialisme: Veksler mellom å være til fordel for de to partene",
+                    "correct": true
+                },
+                {
+                    "text": "d) Kommensalisme: Til fordel for en av partene. Verken til fordel eller ulempe for den andre",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "83. Hvilken påstand om mikrober er riktig?",
+            "answers": [
+                {
+                    "text": "a) Faktorer som varme, fuktighet og vind har ingen betydning for mikrobers mulighet til å",
+                    "correct": false
+                },
+                {
+                    "text": "b) De fleste mikrober kan infisere verten sin gjennom hel hud",
+                    "correct": false
+                },
+                {
+                    "text": "c) Alle mikrober i en vert må før eller siden finne seg en ny vert for å overleve",
+                    "correct": true
+                },
+                {
+                    "text": "d) En biofilm er et kunstig materiale som gir beskyttelse mot infeksjonssmitte på",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "84. En symptomatisk infeksjon innledes alltid med en asymptomatisk fase som kalles:",
+            "answers": [
+                {
+                    "text": "a) Prøvetid",
+                    "correct": false
+                },
+                {
+                    "text": "b) Hvilefase",
+                    "correct": false
+                },
+                {
+                    "text": "c) Inkubasjonstid",
+                    "correct": true
+                },
+                {
+                    "text": "d) Latensperiode",
+                    "correct": false
+                },
+                {
+                    "text": "e) Ventetid",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "85. Hvorfor kan en asymptomatisk infeksjon være et problem? Fordi man:",
+            "answers": [
+                {
+                    "text": "a) Ikke forstår hvorfor man har vondt",
+                    "correct": false
+                },
+                {
+                    "text": "b) Ikke oppsøker lege i tide",
+                    "correct": false
+                },
+                {
+                    "text": "c) Ikke tar nødvendige forholdsregler for å unngå smittespredning",
+                    "correct": true
+                },
+                {
+                    "text": "d) Kan bli immun",
+                    "correct": false
+                },
+                {
+                    "text": "e) Kan bli resistent",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "86. Mange infeksjoner i sykehus og sykehjem er opportunistiske infeksjoner. Hva er ikke en grunn for at pasienter får slike infeksjoner?",
+            "answers": [
+                {
+                    "text": "a) Svekket immunforsvar pga. alder/sykdom",
+                    "correct": false
+                },
+                {
+                    "text": "b) Mikrober som spres i forbindelse med instrumentering og operasjoner",
+                    "correct": false
+                },
+                {
+                    "text": "c) Svekket immunforsvar pga. immunsupprimerende behandling (f.eks. ved kreft og",
+                    "correct": false
+                },
+                {
+                    "text": "d) Kostholdstilskudd (svekker pasientenes naturlige immunforsvar)",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "87. Hva er riktig når det gjelder en persons motstandskraft mot infeksjoner?",
+            "answers": [
+                {
+                    "text": "a) Hormonelle endringer kan svekke en persons motstandskraft mot infeksjoner",
+                    "correct": false
+                },
+                {
+                    "text": "b) Ernæringsstatus har betydning for personers motstandskraft mot infeksjoner",
+                    "correct": false
+                },
+                {
+                    "text": "c) Alder spiller en rolle, der helt unge eller gamle personer har svekket motstandskraft mot",
+                    "correct": false
+                },
+                {
+                    "text": "d) Alle alternativene er riktige",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "88. Hva er riktig når det gjelder en persons motstandskraft mot infeksjoner?",
+            "answers": [
+                {
+                    "text": "a) Hormonelle endringer kan svekke en persons motstandskraft mot infeksjoner",
+                    "correct": true
+                },
+                {
+                    "text": "b) Ernæringsstatus betyr lite for personers motstandskraft mot infeksjoner",
+                    "correct": false
+                },
+                {
+                    "text": "c) Eldre har sterkere motstandskraft mot infeksjoner på grunn av mer effektivt",
+                    "correct": false
+                },
+                {
+                    "text": "d) Alle alternativene er riktige",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "89. Det medfødte, uspesifikke immunforsvaret vårt kan kalles et «førstelinjeforsvar» og trer i",
+            "answers": [
+                {
+                    "text": "a) Kvalme, oppkast, smerte, utslett",
+                    "correct": false
+                },
+                {
+                    "text": "b) Smerte, krampe, hevelse, rødme",
+                    "correct": false
+                },
+                {
+                    "text": "c) Varme, rødme, hevelse, smerte",
+                    "correct": true
+                },
+                {
+                    "text": "d) Smerte, kvalme, utslett, hevelse",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "90. Hva er ikke riktig når det gjelder feber?",
+            "answers": [
+                {
+                    "text": "a) Feber er en vanlig indikator på en inflammasjon.",
+                    "correct": false
+                },
+                {
+                    "text": "b) Feber er ubehagelig, men aldri skadelig",
+                    "correct": true
+                },
+                {
+                    "text": "c) Feber induseres ved frigjøring av ulike substanser, såkalte pyrogener, fra mikrober og hvite blodceller",
+                    "correct": false
+                },
+                {
+                    "text": "d) Moderat feber er generelt til gagn for pasienten ved at den øker fagocytosen og antistoffreaksjonene",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "91. Hva er riktig påstand om feber?",
+            "answers": [
+                {
+                    "text": "a) Feber er en uvanlig indikator på en inflammasjon",
+                    "correct": false
+                },
+                {
+                    "text": "b) Feber kan føles ubehagelig, men er aldri skadelig",
+                    "correct": false
+                },
+                {
+                    "text": "c) Feber induseres ved frigjøring av ulike substanser, såkalte pyrogener, fra mikrober og hvite blodceller",
+                    "correct": true
+                },
+                {
+                    "text": "d) Feber er generelt uheldig for pasienten ved at den øker fagocytosen og antistoffreaksjonene slik at det naturlige immunforsvaret svekkes",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "92. Hva er ikke et vanlig anbefalt tiltak for å hindre smitteoverføring av sykdom?",
+            "answers": [
+                {
+                    "text": "a) Vaksinering",
+                    "correct": false
+                },
+                {
+                    "text": "b) Styrking av kroppens immunforsvar (god ernæring, hygiene, aktivitet, søvn)",
+                    "correct": false
+                },
+                {
+                    "text": "c) Isolering",
+                    "correct": false
+                },
+                {
+                    "text": "d) Bruk av hansker og munnbind",
+                    "correct": false
+                },
+                {
+                    "text": "e) Desinfisering/sterilisering av medisinsk utstyr",
+                    "correct": false
+                },
+                {
+                    "text": "f) Bredspektret antibiotikabehandling",
+                    "correct": true
+                },
+                {
+                    "text": "g) Tildekking av sår/skader i huden",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "93. Hvilke tre forhold karakteriserer det ervervede, spesifikke immunforsvaret vårt?",
+            "answers": [
+                {
+                    "text": "a) Spesifisitet, hukommelse og toleranse",
+                    "correct": true
+                },
+                {
+                    "text": "b) Spesifisitet, utvalg og toleranse",
+                    "correct": false
+                },
+                {
+                    "text": "c) Spesifisitet, hukommelse og latens",
+                    "correct": false
+                },
+                {
+                    "text": "d) Spesifisitet, utvalg og immunitet",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "94. Hva betyr ordet antibiotika?",
+            "answers": [
+                {
+                    "text": "a) Helsebringende midler",
+                    "correct": false
+                },
+                {
+                    "text": "b) Kampen for helse",
+                    "correct": false
+                },
+                {
+                    "text": "c) Midler mot liv",
+                    "correct": true
+                },
+                {
+                    "text": "d) Sunne liv",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "95. Hva er riktig påstand om antibiotika?",
+            "answers": [
+                {
+                    "text": "a) Antibiotikaresistens er menneskeskapt",
+                    "correct": false
+                },
+                {
+                    "text": "b) Antimikrobielle legemidler virker på samme måte",
+                    "correct": false
+                },
+                {
+                    "text": "c) Farmasøytisk industri produserer mange hundre millioner kilo antibiotika hvert år",
+                    "correct": true
+                },
+                {
+                    "text": "d) Smalspektrede, antimikrobielle legemidler virker på mange ulike mikrober",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "96. Hva er riktig påstand om bivirkninger ved antibiotikabehandling?",
+            "answers": [
+                {
+                    "text": "a) Alle bivirkninger ved antibiotikabruk opptrer akutt",
+                    "correct": false
+                },
+                {
+                    "text": "b) Før et nytt antibiotikum kommer på markedet gjøres en samlet vurdering av blant annet dets bivirkningsprofil",
+                    "correct": true
+                },
+                {
+                    "text": "c) Antibiotika påvirker ikke tarmfloraen, kun normalfloraen på huden",
+                    "correct": false
+                },
+                {
+                    "text": "d) Bivirkninger ved antibiotikabehandling kan være plagsomme, men aldri farlige",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "97. Hva er riktig påstand om midler mot mikrober?",
+            "answers": [
+                {
+                    "text": "a) Bakteriostatisk betyr at et middel virker statisk, det vil si at ingenting skjer med mikrobene",
+                    "correct": false
+                },
+                {
+                    "text": "b) Baktericidmiddel betyr at et middel øker veksten av mikrober",
+                    "correct": false
+                },
+                {
+                    "text": "c) Bakteriostatisk virker fremmende på mikrober",
+                    "correct": false
+                },
+                {
+                    "text": "d) Et baktericidmiddel er et bakteriedrepende middel",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "98. Hva vil det si at et antibiotikum er smalspektret? At det virker:",
+            "answers": [
+                {
+                    "text": "a) Kun en kort periode (smalt tidsrom)",
+                    "correct": false
+                },
+                {
+                    "text": "b) Kun på stavformede bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "c) Kun på noen få mikrobearter",
+                    "correct": true
+                },
+                {
+                    "text": "d) Best på unge pasienter med lav kroppsvekt",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "99. Mikrober som utvikler resistens mot antibiotika, er et økende problem. Hva er feil påstand om resistensutvikling?",
+            "answers": [
+                {
+                    "text": "a) Rasjonell og kritisk bruk av antibiotika er viktig for å redusere spredning av resistente bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "b) Mikrober kan også utvikle resistens mot desinfeksjonsmidler",
+                    "correct": false
+                },
+                {
+                    "text": "c) Mikrober kan utvikle resistens ved å mutere eller ved horisontal overføring av arvestoff",
+                    "correct": false
+                },
+                {
+                    "text": "d) En bør alltid velge et bredspektret antibiotikum i oppstarten av en behandling",
+                    "correct": true
+                },
+                {
+                    "text": "e) En bør tilstrebe å behandle med et antibiotikum som gir minst mulig økoskygge samtidig som det har adekvat behandlingseffekt",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "100. Overvåkning av antibiotikaresistens i Norge skjer gjennom tre systemer. Hvilke er feil?",
+            "answers": [
+                {
+                    "text": "a) MSIS: Meldingssystemet for smittsomme sykdommer",
+                    "correct": false
+                },
+                {
+                    "text": "b) NORM: Norsk overvåkningssystem for antibiotikaresistens",
+                    "correct": false
+                },
+                {
+                    "text": "c) NSLR: Norsk sjekkliste for resistens",
+                    "correct": true
+                },
+                {
+                    "text": "d) NORM-VET: Norsk overvåkningsprogram for antibiotikaresistens i mikrober fra fôr, dyr og næringsmidler",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "101. Ved resistensbestemmelse i laboratorier, brukes et tregruppesystem som betegnes SIR. Hva står disse bokstavene for?",
+            "answers": [
+                {
+                    "text": "a) S= suveren, I= intelligent, R= resistent",
+                    "correct": false
+                },
+                {
+                    "text": "b) S= sensitiv, I= intermediær, R= robust",
+                    "correct": false
+                },
+                {
+                    "text": "c) S= sikker, I= inaktiv, R= resistent",
+                    "correct": false
+                },
+                {
+                    "text": "d) S= sensitiv, I= intermediær, R= resistent",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "102. Hvilken påstand er riktig?",
+            "answers": [
+                {
+                    "text": "a) Legemidler mot sopp virker også godt på de fleste bakterier",
+                    "correct": false
+                },
+                {
+                    "text": "b) Ervervet resistens vil si at en mikrobe endrer sitt arvestoff og går fra å være følsomt til å bli resistent overfor et antibiotikum",
+                    "correct": true
+                },
+                {
+                    "text": "c) Alle mikrober har en naturlig resistens overfor antibiotika",
+                    "correct": false
+                },
+                {
+                    "text": "d) Mutasjoner skjer kun i menneskeceller, ikke i bakterier",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "103. Hvilken påstand er feil om antimikrobielle midler?",
+            "answers": [
+                {
+                    "text": "a) Bruk av antimikrobielle midler, påvirker også miljøet utenfor pasientens kropp",
+                    "correct": false
+                },
+                {
+                    "text": "b) Et antimikrobielt middel som kaster en lang økoskygge, er vanskelig nedbrytbart og påvirker mange mikrober",
+                    "correct": false
+                },
+                {
+                    "text": "c) Det er en fordel at ulike husholdningsvaskemidler inneholder desinfeksjonsmidler slik at sykdom unngås",
+                    "correct": true
+                },
+                {
+                    "text": "d) Bruk av plantevernmidler virker hemmende på mikrober, noe som videre kan kobles med antibiotikaresistens",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "104. Hva er feil påstand?",
+            "answers": [
+                {
+                    "text": "a) Probiotika er bakteriestammer som ved inntak kan ha positive helseeffekter",
+                    "correct": false
+                },
+                {
+                    "text": "b) Probiotika er særlig gunstig for barn under 2 år for å styrke deres immunforsvar",
+                    "correct": true
+                },
+                {
+                    "text": "c) Probiotika kan inneholde gener som koder for antibiotikaresistens",
+                    "correct": false
+                },
+                {
+                    "text": "d) Resistente mikrober blir ikke destruert i dagens kloakkrenseanlegg",
+                    "correct": false
+                },
+                {
+                    "text": "e) Det er Mattilsynet som har ansvar for å følge med på mengden resistente mikrober og",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "105. Hva er riktig påstand om probiotika?",
+            "answers": [
+                {
+                    "text": "b) Probiotika er særlig gunstig for barn under 2 år for å styrke deres immunforsvar",
+                    "correct": true
+                },
+                {
+                    "text": "c) Probiotika inneholder aldri gener som koder for antibiotikaresistens",
+                    "correct": false
+                },
+                {
+                    "text": "d) Probiotika består av døde mikrober som styrker immunsystemet",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "106. Forkortelsen MRSA står for:",
+            "answers": [
+                {
+                    "text": "a) Multi Reactive Staphylococcus  Aureus",
+                    "correct": false
+                },
+                {
+                    "text": "b) Meticillin Resistent Staphylococcus Aureus",
+                    "correct": true
+                },
+                {
+                    "text": "c) Meta Robust Streptococcus Aureus",
+                    "correct": false
+                },
+                {
+                    "text": "d) Meticillin Resistent Streptococcus Aureus",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "107. Hvilken påstand om smittevern er feil?",
+            "answers": [
+                {
+                    "text": "a) I Norge er primæransvaret for smittevern lagt til kommunene",
+                    "correct": false
+                },
+                {
+                    "text": "b) Alle kommuner skal ha en smittevernlege",
+                    "correct": false
+                },
+                {
+                    "text": "c) Det er ikke lov for flere kommuner å gå sammen om en felles smittevernlege",
+                    "correct": true
+                },
+                {
+                    "text": "d) Hovedansvaret for rådgivning og assistanse til kommunene i smittevernspørsmål, er lagt til Folkehelseinstituttet",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "108. Et viktig tiltak innen smittevernet, er rutineundersøkelser av spesielle grupper i befolkningen. Når alle i en befolkningsgruppe er målgruppe, kalles en slik masseundersøkelse screening. Hvilken påstand er ikke riktig?",
+            "answers": [
+                {
+                    "text": "a) Etablerte blodgivere blir ved hver tapping testet for hivinfeksjon, hepatitt B og hepatitt C.",
+                    "correct": false
+                },
+                {
+                    "text": "b) Alle gravide får tilbud om å teste seg for hivinfeksjon, syfilis og hepatitt B.",
+                    "correct": false
+                },
+                {
+                    "text": "c) Alle innvandrere fra land med høy forekomst av tuberkulose, skal undersøkes for denne sykdommen innen 14 dager etter ankomst",
+                    "correct": false
+                },
+                {
+                    "text": "d) Alle kvinner som har debutert seksuelt, må gjennomgå obligatorisk undersøkelse for humant papillomavirus for å forebygge livmorhalskreft",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "109. Forebygging av smittsomme sykdommer skal hindre at personer blir eksponert for en smittsom sykdom eller hindre at de blir smittet selv om de eksponeres. Hvilket av forebyggingstiltakene er feil?",
+            "answers": [
+                {
+                    "text": "a) Bekjempelse av fattigdom",
+                    "correct": false
+                },
+                {
+                    "text": "b) God hygiene",
+                    "correct": false
+                },
+                {
+                    "text": "c) Vaksinering",
+                    "correct": false
+                },
+                {
+                    "text": "d) Årlig blodprøvekontroll",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "110. Forebygging av smittsomme sykdommer skal hindre at personer blir eksponert for en smittsom sykdom eller hindre at de blir smittet selv om de eksponeres. Hvilket av forebyggingstiltakene er feil?",
+            "answers": [
+                {
+                    "text": "a) Matvarekontroll",
+                    "correct": false
+                },
+                {
+                    "text": "b) Informasjon og kunnskap om smitte til befolkningen",
+                    "correct": false
+                },
+                {
+                    "text": "c) Rene sprøyter og sprøyterom for narkomane",
+                    "correct": false
+                },
+                {
+                    "text": "d) Antibiotikabehandling til alle med infeksjonssymptomer",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "111. Beskyttelsesutstyr ved stell av pasient med dråpesmitte består av:",
+            "answers": [
+                {
+                    "text": "a) Smittefrakk, sterile hansker og munnbind",
+                    "correct": false
+                },
+                {
+                    "text": "b) Smittefrakk og sterile hansker",
+                    "correct": false
+                },
+                {
+                    "text": "c) Munnbind og sterile hansker",
+                    "correct": false
+                },
+                {
+                    "text": "d) Smittefrakk, usterile hansker og munnbind",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "112. Aseptikk er metoder for å:",
+            "answers": [
+                {
+                    "text": "a) Gjennomføre smertefrie sårskift",
+                    "correct": false
+                },
+                {
+                    "text": "b) Bistå pasienten under rene prosedyrer",
+                    "correct": false
+                },
+                {
+                    "text": "c) Holde arbeidsområdet fritt for mikrober",
+                    "correct": true
+                },
+                {
+                    "text": "d) Holde arbeidsområdet rent og ryddig",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "113. Infeksjonsforebyggende standardtiltak reduserer mulighetene for å overføre",
+            "answers": [
+                {
+                    "text": "a) Pasienter og helsepersonell",
+                    "correct": false
+                },
+                {
+                    "text": "b) Helsepersonell og pårørende",
+                    "correct": false
+                },
+                {
+                    "text": "c) Pasienter og pårørende",
+                    "correct": false
+                },
+                {
+                    "text": "d) Pårørende, pasienter og helsepersonell",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "114. Hva er ikke riktig påstand om vaksinasjon?",
+            "answers": [
+                {
+                    "text": "a) Helsepersonell har plikt til å melde fra om alvorlige eller ukjente reaksjoner etter vaksinering",
+                    "correct": false
+                },
+                {
+                    "text": "b) Vaksinevegring er forståelig og bør støttes av helsepersonell",
+                    "correct": true
+                },
+                {
+                    "text": "c) Helsepersonell som ikke ønsker å vaksinere seg, kan omplasseres slik at de ikke kan utsette risikopasienter for smittefare",
+                    "correct": false
+                },
+                {
+                    "text": "d) Vaksiner bør friskes opp etter en viss tid",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "115. Hvilken smittsom sykdom er utryddet i verden på grunn av vaksine?",
+            "answers": [
+                {
+                    "text": "a) Gul feber",
+                    "correct": false
+                },
+                {
+                    "text": "b) Røde hunder",
+                    "correct": false
+                },
+                {
+                    "text": "c) Kopper",
+                    "correct": true
+                },
+                {
+                    "text": "d) Kusma",
+                    "correct": false
+                },
+                {
+                    "text": "e) Pest",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "116. Hva er ikke riktig påstand om vaksiner og immunitet?",
+            "answers": [
+                {
+                    "text": "a) Arbeidsgiver kan pålegge helsepersonell som jobber med sårbare pasienter, å vaksinere seg mot influensa",
+                    "correct": true
+                },
+                {
+                    "text": "b) Prinsippet for vaksinasjon er at kroppen tilføres en svekket mikrobe, deler av en mikrobe eller noe som ligner en bestemt mikrobe for så å danne antistoffer mot den virkelige mikroben",
+                    "correct": false
+                },
+                {
+                    "text": "c) Naturlig aktiv immunisering skjer når en person utsettes for et smittestoff og kroppen danner antistoffer på naturlig måte",
+                    "correct": false
+                },
+                {
+                    "text": "d) Flokkimmunitet betyr at ikke-vaksinerte personer likevel er beskyttet mot smittsomme sykdommer fordi så mange andre i nærmiljøet er vaksinert eller har gjennomgått sykdommen og dannet antistoffer mot den",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "117. Vaksinasjon har gjort det mulig å få en rekke smittsomme sykdommer under kontroll. Hvor stor del av befolkningen må være vaksinert for å oppnå en slik kontroll?",
+            "answers": [
+                {
+                    "text": "a) Minst 30 %",
+                    "correct": false
+                },
+                {
+                    "text": "b) 50 %",
+                    "correct": false
+                },
+                {
+                    "text": "c) 70 %",
+                    "correct": false
+                },
+                {
+                    "text": "d) Over 90 %",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "question": "118. Folkehelseinstituttet mottar årlig ca. 15 000 meldinger om alvorlige, smittsomme sykdommer som er meldingspliktige i MSIS (Meldingssystem for smittsomme sykdommer). Hvilken sykdom er den vanligste meldte infeksjonen?",
+            "answers": [
+                {
+                    "text": "a) Meslinger",
+                    "correct": false
+                },
+                {
+                    "text": "b) Klamydiainfeksjon",
+                    "correct": true
+                },
+                {
+                    "text": "c) Poliomyelitt",
+                    "correct": false
+                },
+                {
+                    "text": "d) Meningitt (smittsom hjernehinnebetennelse)",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "question": "119. Hvilken påstand er feil?",
+            "answers": [
+                {
+                    "text": "a) Helsetjenesteassisterte infeksjoner (HAI) er infeksjoner som oppstår ved innleggelse i sykehus, sykehjem eller andre helseinstitusjoner",
+                    "correct": false
+                },
+                {
+                    "text": "b) Riktig utført håndhygiene til rett tid vil redusere smitteoverføring, forebygge helsetjenesteassisterte infeksjoner, redusere kostnader og forebygge antibiotikaresistens",
+                    "correct": false
+                },
+                {
+                    "text": "c) Det er ikke noe problem for helsepersonell som blir smittet av MRSA (meticillinresistente gule stafylokokker) da de fortsatt kan jobbe med pasienter som er innlagt i helseinstitusjoner",
+                    "correct": true
+                },
+                {
+                    "text": "d) Mer enn 45 000 pasienter får årlig helsetjenesteassisterte infeksjoner i norske sykehus",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}

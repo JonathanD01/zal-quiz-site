@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+	<title>Quizer</title>
+	<script type="text/javascript" src="/scripts/tailwind.js"></script>
+	<script type="text/javascript" src="/scripts/scripts.js"></script>
+	<meta charset="UTF-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="bg-neutral-950 text-neutral-200">
+
+	<div class="max-w-[90%] mx-auto mt-12">
+		
+		<!-- front -->
+		<div id="front">
+			<div>
+				<h1 class="text-2xl md:text-4xl lg:text-6xl font-bold">Quizer</h1>
+			</div>
+
+			<div class="mt-5 grid md:grid-cols-2 gap-4">
+				<div class="bg-neutral-800 rounded-xl p-6 hover:bg-neutral-700 cursor-pointer" onclick="setQuizToPlay('1')">
+					<h2 class="text-xl">
+						<a class="hover:underline font-semibold">MCQ treningsoppgaver i MIKROBIOLOG</a>
+					</h2>
+					<span class="text-gray-500 mt-2 block">Antall spørsmål: 119</span>
+				</div>
+
+				<div class="bg-neutral-800 rounded-xl p-6 hover:bg-neutral-700 cursor-pointer" onclick="setQuizToPlay('?')">
+					<h2 class="text-xl font-semibold">
+						<a class="hover:underline">???</a>
+					</h2>
+					<span class="text-gray-500 mt-2 block">Antall spørsmål: ???</span>
+				</div>
+			</div>
+
+			<!-- instillinger -->
+			<div class="my-6">
+				<h2 class="text-xl font-bold mb-2">Instillinger</h2>
+				<div class="grid grid-rows-auto gap-y-4">
+
+					<div class="flex flex-row items-center gap-x-4">
+						<div class="inline-flex items-center">
+						  <label class="flex items-center cursor-pointer relative">
+						    <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="SORT_QUESTIONS" onclick="handleSettingsChecked(this)" />
+						    <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+						      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+						        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+						      </svg>
+						    </span>
+						  </label>
+						</div> 
+						<span>Sorter spørsmål tilfeldigt</span>
+					</div>
+
+					<div class="flex flex-row items-center gap-x-4">
+						<div class="inline-flex items-center">
+						  <label class="flex items-center cursor-pointer relative">
+						    <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="SORT_ANSWERS" onclick="handleSettingsChecked(this)" />
+						    <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+						      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+						        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+						      </svg>
+						    </span>
+						  </label>
+						</div> 
+						<span>Sorter svar tilfeldigt</span>
+					</div>
+
+					<div class="flex flex-row items-center gap-x-4">
+						<div class="inline-flex items-center">
+						  <label class="flex items-center cursor-pointer relative">
+						    <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="SHOW_QUESTION_NUMBER" onclick="handleSettingsChecked(this)" />
+						    <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+						      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+						        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+						      </svg>
+						    </span>
+						  </label>
+						</div> 
+						<span>Vis spørsmål nummer (f.eks. 90. Hva er ikke riktig når det gjelder feber?)</span>
+					</div>
+
+					<div class="flex flex-row items-center gap-x-4">
+						<div class="inline-flex items-center">
+						  <label class="flex items-center cursor-pointer relative">
+						    <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="SHOW_ANSWER_OPTION" onclick="handleSettingsChecked(this)" />
+						    <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+						      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+						        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+						      </svg>
+						    </span>
+						  </label>
+						</div> 
+						<span>Vis svar alternativ prefix [f.eks. a) Feber er en uvanlig indikator på en inflammasjon]</span>
+					</div>
+
+					<div class="flex flex-row items-center gap-x-4">
+						<div class="inline-flex items-center">
+						  <label class="flex items-center cursor-pointer relative">
+						    <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="DEBUG" onclick="handleSettingsChecked(this)" />
+						    <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+						      <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+						        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+						      </svg>
+						    </span>
+						  </label>
+						</div> 
+						<span>Debug</span>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		<!-- eof instillinger -->
+
+		<!-- end of front -->
+
+		<!-- play -->
+		<div id="play" class="hidden">
+			<div class="my-4 flex flex-row gap-x-2">
+				<button class="flex flex-row gap-x-2 bg-neutral-800 hover:bg-neutral-700 px-4 py-2 rounded-xl" onclick="showHome()">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+					  <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+					</svg>
+					<span>Hjem</span>
+				</button>
+
+				<button class="flex flex-row gap-x-2 bg-neutral-800 hover:bg-neutral-700 px-4 py-2 rounded-xl" onclick="resetQuiz()">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+					  <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+					</svg>
+					Start på nytt
+				</button>
+
+			</div>
+
+
+			<!-- play header -->
+			<div class="text-center">
+				<h2 id="play-title" class="text-2xl md:text-4xl lg:text-6xl font-bold">???<h2>
+				<span class="mt-4 block text-neutral-500">Startet: <span id="quiz-start-time">???</span></span>
+			</div>
+
+			<div class="my-12 text-center">
+				<p class="font-bold text-gray-500"><span id="current-quiz-question-index">???</span>/<span id="quiz-questions-count">???</span></p>
+				<h3 id="quiz-question" class="text-xl md:text-2xl lg:text-4xl">
+				???
+			</h3>
+			</div>
+			<!-- eof play header -->
+
+			<!-- feedback -->
+			<div class="my-2 text-center my-6">
+				<p>
+					<span id="play-answer-feedback" class="lg:max-w-[70%] mx-auto block"></span>
+				</p>
+			</div>
+			<!-- eof feedback -->
+
+
+			<!-- answer cards -->
+			<div class="grid grid-cols-2 md:grid-cols-[40px_1fr_40px] gap-x-12 gap-y-4 items-center">
+
+				<div class="order-2 md:order-1 bg-neutral-200 hover:bg-neutral-100 w-full md:w-auto rounded-xl mx-auto p-4 cursor-pointer" onclick="handlePreviousQuestion()">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" class="size-6">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+					</svg>
+				</div>
+
+				<div id="play-cards" class="order-1 md:order-2 col-span-2 md:col-span-1 grid md:grid-cols-2 gap-4 text-xl select-none">
+					<div id="play-card-0" class="hidden px-6 py-3 bg-neutral-800 rounded-xl hover:bg-neutral-700 cursor-pointer border-4 border-dashed border-transparent" onclick="handleAnswerClick(this)"></div>
+					<div id="play-card-1" class="hidden px-6 py-3 bg-neutral-800 rounded-xl hover:bg-neutral-700 cursor-pointer border-4 border-dashed border-transparent" onclick="handleAnswerClick(this)"></div>
+					<div id="play-card-2" class="hidden px-6 py-3 bg-neutral-800 rounded-xl hover:bg-neutral-700 cursor-pointer border-4 border-dashed border-transparent" onclick="handleAnswerClick(this)"></div>
+					<div id="play-card-3" class="hidden px-6 py-3 bg-neutral-800 rounded-xl hover:bg-neutral-700 cursor-pointer border-4 border-dashed border-transparent" onclick="handleAnswerClick(this)"></div>
+					<div id="play-card-4" class="hidden px-6 py-3 bg-neutral-800 rounded-xl hover:bg-neutral-700 cursor-pointer border-4 border-dashed border-transparent" onclick="handleAnswerClick(this)"></div>
+					<div id="play-card-5" class="hidden px-6 py-3 bg-neutral-800 rounded-xl hover:bg-neutral-700 cursor-pointer border-4 border-dashed border-transparent" onclick="handleAnswerClick(this)"></div>
+				</div>
+
+				<div class="order-3 md:order-3 bg-neutral-200 hover:bg-neutral-100 w-full md:w-auto rounded-xl mx-auto p-4 cursor-pointer" onclick="handleNextQuestion()">
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000" class="size-6">
+					  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+					</svg>
+
+				</div>
+			</div>
+			<!-- end of answer cards -->
+			
+		</div>
+		<!-- end of play -->
+
+	</div>
+</body>
+</html>
