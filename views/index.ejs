@@ -6,6 +6,45 @@
 	<script type="text/javascript" src="/scripts/scripts.js"></script>
 	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  	<style>
+  		/* Regular */
+		@font-face {
+		  font-family: 'Roboto';
+		  src: url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+		  font-weight: 400;
+		  font-style: normal;
+		}
+
+		/* Bold */
+		@font-face {
+		  font-family: 'Roboto';
+		  src: url('/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+		  font-weight: 700;
+		  font-style: normal;
+		}
+
+		/* Italic */
+		@font-face {
+		  font-family: 'Roboto';
+		  src: url('/fonts/Roboto/Roboto-Italic.ttf') format('truetype');
+		  font-weight: 400;
+		  font-style: italic;
+		}
+
+		/* Bold Italic */
+		@font-face {
+		  font-family: 'Roboto';
+		  src: url('/fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype');
+		  font-weight: 700;
+		  font-style: italic;
+		}
+
+
+		body {
+			font-family: 'Roboto', sans-serif;
+		}
+</style>
 </head>
 <body class="bg-neutral-950 text-neutral-200 pb-20">
 
@@ -137,18 +176,18 @@
 
 
 			<!-- play header -->
-			<div class="text-center">
+			<!-- <div class="text-center">
 				<h2 id="play-title" class="text-2xl md:text-4xl lg:text-6xl font-bold">???<h2>
 				<span class="mt-4 block text-neutral-500">Startet: <span id="quiz-start-time">???</span></span>
-			</div>
+			</div> -->
 
 			<div class="my-12 text-center">
 				<p class="font-bold text-gray-500"><span id="current-quiz-question-index">???</span>/<span id="quiz-questions-count">???</span></p>
-				<h3 id="quiz-question" class="text-xl md:text-2xl lg:text-4xl">
+				<h3 id="quiz-question" class="text-xl md:text-2xl lg:text-4xl lg:max-w-[70%] mx-auto">
 				???
 			</h3>
 			</div>
-			<!-- eof play header -->
+			<!-- eof play header  -->
 
 			<!-- feedback -->
 			<div class="my-2 text-center my-6">

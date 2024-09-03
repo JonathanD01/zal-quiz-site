@@ -60,7 +60,7 @@ function validateQuiz() {
 			correctAnswers += 1;
 			}
 		}
-		if (correctAnswers > 1 && getBoolSettingsValue(SETTINGS_DEBUG_KEY)) {
+		if (correctAnswers > 1) {
 			console.log("Question '" + QUIZ.questions[i].question + "' has more than 1 correct answer!");
 		}
 	}
@@ -83,11 +83,12 @@ function startQuiz() {
 	validateQuiz();
 
 	const date = new Date();
-
-	document.getElementById("play-title").textContent = QUIZ.title;
+	
+	//document.getElementById("play-title").textContent = QUIZ.title;
+	//document.getElementById("quiz-start-time").textContent = date.toLocaleDateString() + " " + date.toLocaleTimeString();
 	document.getElementById("current-quiz-question-index").textContent = CURRENT_QUESTION_INDEX;
 	document.getElementById("quiz-questions-count").textContent = QUIZ.questions.length;
-	document.getElementById("quiz-start-time").textContent = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+
 
 	displayQuestion();
 }
@@ -169,14 +170,14 @@ function handleFeedback(clickedElement, answeredCorrect, correctAnswerElement) {
 
 	if (answeredCorrect) {
 		clickedElement.style.borderColor = "green";
-		feedbackElement.innerHTML = "<span class='text-4xl text-green-600'>Riktig!</span>"
+		feedbackElement.innerHTML = "<span class='text-xl md:text-2xl text-green-600'>Riktig!</span>"
 	} else {
 		clickedElement.style.borderColor = "red";
 		clickedElement.style.opacity = 0.8;
-		feedbackElement.innerHTML = "<span class='text-4xl text-red-600'>Feil!</span>"
+		feedbackElement.innerHTML = "<span class='text-xl md:text-2xl text-red-600'>Feil!</span>"
 		correctAnswerElement.style.borderColor = "green";
-		feedbackElement.innerHTML += "<p class='text-2xl'>Det riktige svaret er: <span class='font-semibold'>" + correctAnswerElement.textContent + 
-		"</span></p>"
+		feedbackElement.innerHTML += "<p class='text-xl md:text-2xl'>Det riktige svaret er: '" + correctAnswerElement.textContent + 
+		"'</span></p>"
 	}
 }
 
@@ -370,7 +371,7 @@ function setAnswerText(answer, answerElement) {
 	if (getBoolSettingsValue(SHOW_ANSWER_OPTION)) {
 		text = answer.text;
 	} else {
-		const answerElementSubStringIndex = answer.text.indexOf(")") + 1;
+		const answerElementSubStringIndex = answer.text.indexOf(")") + 2;
 		text = answer.text.substring(answerElementSubStringIndex);
 	}
 
