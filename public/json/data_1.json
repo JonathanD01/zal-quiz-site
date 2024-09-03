@@ -256,15 +256,15 @@
                     "correct": false
                 },
                 {
-                    "text": "b) Er det samme som cellemembranen i eukaryote celler og fungerer på samme måte som",
+                    "text": "b) Er det samme som cellemembranen i eukaryote celler og fungerer på samme måte som cellemembraner",
                     "correct": false
                 },
                 {
-                    "text": "c) Finner vi bare hos gram negative bakterier der de fungerer som festeanordninger til",
+                    "text": "c) Finner vi bare hos gram negative bakterier der de fungerer som festeanordninger til omgivelsene",
                     "correct": false
                 },
                 {
-                    "text": "d) Ligger utenfor bakterienes cellemembran og beskytter bakteriene mot forandringer i",
+                    "text": "d) Ligger utenfor bakterienes cellemembran og beskytter bakteriene mot forandringer i omgivelsene",
                     "correct": true
                 }
             ]
@@ -961,7 +961,7 @@
             "question": "45. Hvilket utsagn er feil?",
             "answers": [
                 {
-                    "text": "a) Patogenese er prosessen mellom en mikrobe og en vert som resulterer i skade eller",
+                    "text": "a) Patogenese er prosessen mellom en mikrobe og en vert som resulterer i skade eller sykdom hos verten",
                     "correct": false
                 },
                 {
@@ -969,7 +969,7 @@
                     "correct": false
                 },
                 {
-                    "text": "c) Etter at en bakterie har adherert til en slimhinne, formerer den seg gjennom en prosess",
+                    "text": "c) Etter at en bakterie har adherert til en slimhinne, formerer den seg gjennom en prosess som kalles kolonisering",
                     "correct": false
                 },
                 {
@@ -1179,7 +1179,7 @@
                     "correct": true
                 },
                 {
-                    "text": "c) Sopp har stor kommersiell samfunnsbetydning f.eks. i forbindelse med den",
+                    "text": "c) Sopp har stor kommersiell samfunnsbetydning f.eks. i forbindelse med den farmasøytiske industrien, brygging og baking",
                     "correct": false
                 },
                 {
@@ -1217,7 +1217,7 @@
                     "correct": false
                 },
                 {
-                    "text": "b) Sopp smitter enten endogent (fra koppens egen hud/slimhinner) eller eksogent (fra det",
+                    "text": "b) Sopp smitter enten endogent (fra koppens egen hud/slimhinner) eller eksogent (fra det ytre miljøet)",
                     "correct": false
                 },
                 {
@@ -1309,7 +1309,7 @@
                     "correct": false
                 },
                 {
-                    "text": "c) De fleste helminter (ormer, mark) utvikles til infeksjonsdyktige former kun utenfor",
+                    "text": "c) De fleste helminter (ormer, mark) utvikles til infeksjonsdyktige former kun utenfor verten sin",
                     "correct": false
                 },
                 {
@@ -1443,7 +1443,7 @@
                     "correct": true
                 },
                 {
-                    "text": "d) Kan behandles, men krever lan                                                                                                     g",
+                    "text": "d) Kan behandles, men krever lang tid før en blir frisk",
                     "correct": false
                 }
             ]
@@ -1549,7 +1549,7 @@
                 },
                 {
                     "text": "d) Kostholdstilskudd (svekker immunsystemet)",
-                    "correct": false
+                    "correct": true
                 },
                 {
                     "text": "e) Antibiotikaresistens",
@@ -1611,7 +1611,7 @@
             "question": "75. Hva er riktig påstand om infeksjonssykdommer?",
             "answers": [
                 {
-                    "text": "a) Infeksjonssykdommene vil trolig utryddes etter få år ved hjelp av stadig bedre medisiner",
+                    "text": "a) Infeksjonssykdommene vil trolig utryddes etter få år ved hjelp av stadig bedre medisiner og levevilkår",
                     "correct": false
                 },
                 {
@@ -1653,7 +1653,7 @@
             "question": "77. Hva er ikke riktig påstand om normalfloraen?",
             "answers": [
                 {
-                    "text": "a) Normalfloraen består hovedsakelig av bakterier, men også sopp og protozoer i et",
+                    "text": "a) Normalfloraen består hovedsakelig av bakterier, men også sopp og protozoer i et mindretall",
                     "correct": false
                 },
                 {
@@ -1661,7 +1661,7 @@
                     "correct": false
                 },
                 {
-                    "text": "c) Vaginal fødsel gir det nyfødte barnet et større mangfold av bakterier i tarmen noe",
+                    "text": "c) Vaginal fødsel gir det nyfødte barnet et større mangfold av bakterier i tarmen noe som er gunstig for utvikling av barnets immunsystem",
                     "correct": false
                 },
                 {
@@ -1695,7 +1695,7 @@
             "question": "79. Hva er riktig påstand om tarmfloraen?",
             "answers": [
                 {
-                    "text": "a) Ingen bakterier kan overleve i magesekken til mennesket på grunn av den sure",
+                    "text": "a) Ingen bakterier kan overleve i magesekken til mennesket på grunn av den sure magesaften",
                     "correct": false
                 },
                 {
@@ -1787,7 +1787,7 @@
             "question": "83. Hvilken påstand om mikrober er riktig?",
             "answers": [
                 {
-                    "text": "a) Faktorer som varme, fuktighet og vind har ingen betydning for mikrobers mulighet til å",
+                    "text": "a) Faktorer som varme, fuktighet og vind har ingen betydning for mikrobers mulighet til å spre seg i miljøet",
                     "correct": false
                 },
                 {
@@ -1799,7 +1799,7 @@
                     "correct": true
                 },
                 {
-                    "text": "d) En biofilm er et kunstig materiale som gir beskyttelse mot infeksjonssmitte på",
+                    "text": "d) En biofilm er et kunstig materiale som gir beskyttelse mot infeksjonssmitte på instrumenter og proteser",
                     "correct": false
                 }
             ]
@@ -1866,7 +1866,7 @@
                     "correct": false
                 },
                 {
-                    "text": "c) Svekket immunforsvar pga. immunsupprimerende behandling (f.eks. ved kreft og",
+                    "text": "c) Svekket immunforsvar pga. immunsupprimerende behandling (f.eks. ved kreft og transplantasjoner)",
                     "correct": false
                 },
                 {
@@ -1887,7 +1887,7 @@
                     "correct": false
                 },
                 {
-                    "text": "c) Alder spiller en rolle, der helt unge eller gamle personer har svekket motstandskraft mot",
+                    "text": "c) Alder spiller en rolle, der helt unge eller gamle personer har svekket motstandskraft mot infeksjoner",
                     "correct": false
                 },
                 {
@@ -1908,7 +1908,7 @@
                     "correct": false
                 },
                 {
-                    "text": "c) Eldre har sterkere motstandskraft mot infeksjoner på grunn av mer effektivt",
+                    "text": "c) Eldre har sterkere motstandskraft mot infeksjoner på grunn av mer effektivt immunforsvar",
                     "correct": false
                 },
                 {
@@ -2268,7 +2268,7 @@
                     "correct": false
                 },
                 {
-                    "text": "e) Det er Mattilsynet som har ansvar for å følge med på mengden resistente mikrober og",
+                    "text": "e) Det er Mattilsynet som har ansvar for å følge med på mengden resistente mikrober og resistensgener i importerte matvarer",
                     "correct": false
                 }
             ]
@@ -2277,8 +2277,12 @@
             "question": "105. Hva er riktig påstand om probiotika?",
             "answers": [
                 {
-                    "text": "b) Probiotika er særlig gunstig for barn under 2 år for å styrke deres immunforsvar",
+                    "text": "a) Probiotika er bakteriestammer som ved inntak kan ha positive helseeffekter",
                     "correct": true
+                },
+                {
+                    "text": "b) Probiotika er særlig gunstig for barn under 2 år for å styrke deres immunforsvar",
+                    "correct": false
                 },
                 {
                     "text": "c) Probiotika inneholder aldri gener som koder for antibiotikaresistens",

@@ -1,5 +1,7 @@
 ANSWER_CARD_START_ID_NAME = "play-card-";
 
+ANSWER_FORMAT_ORDER = ["a)", "b)", "c)", "d)", "e)", "f)", "g)", "h)"]
+
 // SETTINGS
 SETTINGS = new Map();
 
@@ -46,7 +48,7 @@ function setQuizToPlay(index) {
 
 function validateQuizIndex(index){
 	if (!QUIZ_DATA_INDEX_MAP.has(index)) {
-		alert("Index: '" + index + "'' does not exist!");
+		alert("Index: '" + index + "' does not exist!");
 		return false;
 	}
 	return true;
@@ -57,11 +59,21 @@ function validateQuiz() {
 		let correctAnswers = 0;
 		for (let j = 0; j < QUIZ.questions[i].answers.length; j++) {
 			if (QUIZ.questions[i].answers[j].correct){
-			correctAnswers += 1;
+				correctAnswers += 1;
+			}
+
+			const questionPrefix = ANSWER_FORMAT_ORDER[j];
+			if (!QUIZ.questions[i].answers[j].text.startsWith(questionPrefix)) {
+				console.log("Answer at question '" + QUIZ.questions[i].question + "' has wrong asnwer order!");
+				console.log(j, questionPrefix, QUIZ.questions[i].answers[j].text);
 			}
 		}
+
+
 		if (correctAnswers > 1) {
 			console.log("Question '" + QUIZ.questions[i].question + "' has more than 1 correct answer!");
+		} else if (correctAnswers <= 0) {
+			console.log("Question '" + QUIZ.questions[i].question + "' has less or 0 correct answer!");
 		}
 	}
 }
@@ -81,6 +93,8 @@ function loadQuiz(index){
 
 function startQuiz() {
 	validateQuiz();
+
+	shuffleQuiz();
 
 	const date = new Date();
 	
@@ -262,17 +276,6 @@ function showPlaypage(){
 
 function setQuizData(data) {
 	QUIZ = data;
-
-	if (getBoolSettingsValue(SETTINGS_SORT_QUESTIONS_KEY)) {
-		shuffle(QUIZ.questions);
-	}
-
-	if (getBoolSettingsValue(SETTINGS_SORT_ANSWERS_KEY)) {
-		for (let i = 0; i < QUIZ.questions.length; i++){
-			shuffle(QUIZ.questions[i].answers);
-		}
-	}
-	
 }
 
 function getCurrentQuestion() {
@@ -313,6 +316,8 @@ function resetQuiz() {
 
 	resetUserInputs();
 
+	shuffleQuiz();
+
 	displayQuestion();
 }
 
@@ -335,6 +340,18 @@ function getBoolSettingsValue(key) {
 function setBoolSettingsValue(key) {
 	value = !(JSON.parse(localStorage.getItem(key)))
     localStorage.setItem(key, value);
+}
+
+function shuffleQuiz(){
+	if (getBoolSettingsValue(SETTINGS_SORT_QUESTIONS_KEY)) {
+		shuffle(QUIZ.questions);
+	}
+
+	if (getBoolSettingsValue(SETTINGS_SORT_ANSWERS_KEY)) {
+		for (let i = 0; i < QUIZ.questions.length; i++){
+			shuffle(QUIZ.questions[i].answers);
+		}
+	}
 }
 
 // Source: https://stackoverflow.com/a/2450976
