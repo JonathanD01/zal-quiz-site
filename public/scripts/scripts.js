@@ -5,12 +5,14 @@ ANSWER_FORMAT_ORDER = ["a)", "b)", "c)", "d)", "e)", "f)", "g)", "h)"]
 // SETTINGS
 SETTINGS = new Map();
 
+SETTINGS_DARK_MODE_KEY = "DARK_MODE";
 SETTINGS_DEBUG_KEY = "DEBUG";
 SETTINGS_SORT_QUESTIONS_KEY = "SORT_QUESTIONS";
 SETTINGS_SORT_ANSWERS_KEY = "SORT_ANSWERS";
 SHOW_QUESTION_NUMBER = "SHOW_QUESTION_NUMBER";
 SHOW_ANSWER_OPTION = "SHOW_ANSWER_OPTION";
 
+SETTINGS.set(SETTINGS_DARK_MODE_KEY, localStorage.getItem(SETTINGS_DARK_MODE_KEY) || false);
 SETTINGS.set(SETTINGS_DEBUG_KEY, localStorage.getItem(SETTINGS_DEBUG_KEY) || false);
 SETTINGS.set(SETTINGS_SORT_QUESTIONS_KEY, localStorage.getItem(SETTINGS_SORT_QUESTIONS_KEY) || false);
 SETTINGS.set(SETTINGS_SORT_ANSWERS_KEY, localStorage.getItem(SETTINGS_SORT_ANSWERS_KEY) || false);
@@ -32,6 +34,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	if (getBoolSettingsValue(SETTINGS_DEBUG_KEY)) {
 		console.log("DOM fully loaded and parsed");
 	}
+
+	if (getBoolSettingsValue(SETTINGS_DARK_MODE_KEY) 
+		|| (!(SETTINGS_DARK_MODE_KEY in localStorage) 
+			&& window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+		document.documentElement.classList.add('dark')
+	}
+
 	initSettingsCheckboxes();
 });
 
@@ -97,9 +106,7 @@ function startQuiz() {
 	shuffleQuiz();
 
 	const date = new Date();
-	
-	//document.getElementById("play-title").textContent = QUIZ.title;
-	//document.getElementById("quiz-start-time").textContent = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+
 	document.getElementById("current-quiz-question-index").textContent = CURRENT_QUESTION_INDEX;
 	document.getElementById("quiz-questions-count").textContent = QUIZ.questions.length;
 
@@ -184,14 +191,14 @@ function handleFeedback(clickedElement, answeredCorrect, correctAnswerElement) {
 
 	if (answeredCorrect) {
 		clickedElement.style.borderColor = "green";
-		feedbackElement.innerHTML = "<span class='text-xl md:text-2xl text-green-600'>Riktig!</span>"
+		feedbackElement.innerHTML = '<span class="text-xl md:text-2xl text-green-600" style="color: green">Riktig!</span>'
 	} else {
 		clickedElement.style.borderColor = "red";
 		clickedElement.style.opacity = 0.8;
-		feedbackElement.innerHTML = "<span class='text-xl md:text-2xl text-red-600'>Feil!</span>"
+		feedbackElement.innerHTML = "<span class='text-xl md:text-2xl' style='color: red;'>Feil!</span>"
 		correctAnswerElement.style.borderColor = "green";
-		feedbackElement.innerHTML += "<p class='text-xl md:text-2xl'>Det riktige svaret er: '" + correctAnswerElement.textContent + 
-		"'</span></p>"
+		feedbackElement.innerHTML += '<p class="text-xl md:text-2xl">Det riktige svaret er: "' + correctAnswerElement.textContent + 
+		'" </span></p>'
 	}
 }
 
@@ -322,6 +329,7 @@ function resetQuiz() {
 }
 
 function initSettingsCheckboxes() {
+	document.getElementById(SETTINGS_DARK_MODE_KEY).checked = getBoolSettingsValue(SETTINGS_DARK_MODE_KEY);
 	document.getElementById(SETTINGS_DEBUG_KEY).checked = getBoolSettingsValue(SETTINGS_DEBUG_KEY);
 	document.getElementById(SETTINGS_SORT_QUESTIONS_KEY).checked = getBoolSettingsValue(SETTINGS_SORT_QUESTIONS_KEY);
 	document.getElementById(SETTINGS_SORT_ANSWERS_KEY).checked = getBoolSettingsValue(SETTINGS_SORT_ANSWERS_KEY);
@@ -340,6 +348,10 @@ function getBoolSettingsValue(key) {
 function setBoolSettingsValue(key) {
 	value = !(JSON.parse(localStorage.getItem(key)))
     localStorage.setItem(key, value);
+
+    if (key === SETTINGS_DARK_MODE_KEY) {
+    	document.documentElement.classList.toggle('dark');
+    }
 }
 
 function shuffleQuiz(){

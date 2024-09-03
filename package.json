@@ -10,7 +10,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "autoprefixer": "^10.4.20",
     "ejs": "^3.1.10",
-    "express": "^4.19.2"
-  }
+    "express": "^4.19.2",
+    "postcss-cli": "^11.0.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  },
+  "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
 }
