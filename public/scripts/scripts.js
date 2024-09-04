@@ -259,14 +259,14 @@ function handleFeedback(clickedElement, answeredCorrect, correctAnswerElement) {
 
     if (answeredCorrect) {
         clickedElement.style.borderColor = "green";
-        feedbackElement.innerHTML = '<span class="text-xl md:text-2xl text-green-600" style="color: green">Riktig!</span>'
+        feedbackElement.innerHTML = '<span class="text-xl md:text-2xl text-green-600 font-bold" style="color: green">Riktig!</span>'
     } else {
         clickedElement.style.borderColor = "red";
         clickedElement.style.opacity = 0.8;
-        feedbackElement.innerHTML = "<span class='text-xl md:text-2xl' style='color: red;'>Feil!</span>"
+        feedbackElement.innerHTML = "<span class='text-xl md:text-2xl font-bold' style='color: red;'>Feil!</span>"
         correctAnswerElement.style.borderColor = "green";
-        feedbackElement.innerHTML += '<p class="text-xl md:text-2xl">Det riktige svaret er: "' + correctAnswerElement.textContent +
-            '" </span></p>'
+        feedbackElement.innerHTML += '<p class="text-xl md:text-2xl">Det riktige svaret er: "<span class="text-underline">' + correctAnswerElement.textContent +
+            '</span>"</span></p>'
     }
 }
 
@@ -502,7 +502,7 @@ function hideDebugDiv() {
     document.getElementById("debug-div").style.display = "none";
 }
 
-function handleShowSpecificQuizQuestion() {
+function goToSpecificQuestion() {
     const questionNumber = document.getElementById("quiz-question-number-input").value;
     if (!questionNumber) {
         alert("You must provide a question number like 10");
@@ -520,6 +520,8 @@ function showSpecificQuizQuestion(questionNumber) {
         alert("This quiz only have " + quizSize + " questions");
         return;
     }
+
+    resetUserInputs();
 
     CURRENT_QUESTION_INDEX = Math.max(1, questionIndex);
 
