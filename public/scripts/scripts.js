@@ -39,10 +39,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         console.log("DOM fully loaded and parsed");
     }
 
-    if (getBoolSettingsValue(SETTINGS_DARK_MODE_KEY) ||
-        (!(SETTINGS_DARK_MODE_KEY in localStorage) &&
-            window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
+    if (getBoolSettingsValue(SETTINGS_DARK_MODE_KEY)
+    	|| window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    	setBoolSettingsValue(SETTINGS_DARK_MODE_KEY, true);
+        document.documentElement.classList.add('dark');
     }
 
     initSettingsCheckboxes();
