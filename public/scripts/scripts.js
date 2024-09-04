@@ -420,8 +420,8 @@ function getBoolSettingsValue(key) {
     return localStorage.getItem(key) === "true";
 }
 
-function setBoolSettingsValue(key) {
-    value = !(JSON.parse(localStorage.getItem(key)))
+function setBoolSettingsValue(key, e = null) {
+    value = e || !(JSON.parse(localStorage.getItem(key)))
     localStorage.setItem(key, value);
 
     if (key === SETTINGS_DARK_MODE_KEY) {
