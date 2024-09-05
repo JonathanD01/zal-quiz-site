@@ -193,6 +193,8 @@ function startQuiz(index) {
             setQuizQuestionsCount();
 
             showCurrentQuestion();
+
+            setMetaTitle(`Quizer | ${CURRENT_QUIZ.title}`)
         })
         .catch(error => {
             console.error('Error starting the quiz:', error);
@@ -397,6 +399,7 @@ function showHome() {
     hidePlaypage();
     showFrontpage();
     setValuesForSettingCheckboxes();
+    setMetaTitle("Quizer");
 }
 
 function resetQuiz() {
@@ -629,6 +632,10 @@ function initKeyDownListener() {
 		}
 
 	});
+}
+
+function setMetaTitle(title) {
+    document.querySelector('title').textContent = title;
 }
 
 function debugMessage(msg) {

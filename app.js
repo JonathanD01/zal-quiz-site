@@ -1,11 +1,19 @@
 // app.js
 
 // Required modules
-const express = require('express');
-const path = require('path');
+var express = require('express');
+var compression = require('compression');
+var minify = require('express-minify');
+var path = require('path');
 
 // Create Express app
 const app = express();
+
+// compression
+app.use(compression({ filter: shouldCompress }))
+
+// minify
+app.use(minify());
 
 // Set up static file serving
 app.use(express.static(path.join(__dirname, 'public')));
@@ -24,3 +32,13 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}`);
 });
+
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) {
+    // don't compress responses with this request header
+    return false
+  }
+
+  // fallback to standard filter function
+  return compression.filter(req, res)
+}
