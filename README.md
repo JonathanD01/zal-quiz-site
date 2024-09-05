@@ -1,6 +1,6 @@
 # Quiz
 
-<img src="./graphics/1.png" width="49%" height="250px"></img> <img src="./graphics/2.png" width="49%" height="250px"></img>
+<img src="./graphics/1.png"></img>
 
 
 Dette prosjektet er laget for å gi en enkel og interaktiv måte å øve på quiz-oppgaver. Den støtter tilpasning, slik at brukere enkelt kan legge til sine egne quizzer ved å opprette en JSON-fil med spørsmål og svar. Dette gjør det til et fleksibelt verktøy for læring og underholdning.
@@ -29,11 +29,12 @@ localhost:3000
 
 ### 1) JSON-fil
 
-Lag en ny JSON-fil og legg den i `/public/json`-mappen. Filen må følge den samme strukturen som vist under. Sørg for at spørsmålene og svarene er korrekt formattert.
+Lag en ny JSON-fil og legg den i `/public/data`-mappen. Filen må følge den samme strukturen som vist under. Sørg for at spørsmålene og svarene er korrekt formattert.
 
 ```json
 {
     "title": "MCQ treningsoppgaver i MIKROBIOLOGI",
+    "document_url": "/docs/BSY161_oppgaver_cleaned_compressed.pdf",
     "questions": [
         {
             "question": "1. Hva er riktig påstand?",
@@ -71,6 +72,7 @@ Lag en ny JSON-fil og legg den i `/public/json`-mappen. Filen må følge den sam
 
 **JSON-filstruktur**
 - **title:** Tittel på quizzen.
+- **document_url:** En lenke hvor selve quizen kan bli lastet ned (alle spørsmål og svar).
 - **questions:** En liste med objekter som representerer spørsmålene i quizzen.
 	- **question:** Selve spørsmålet som skal vises.
 	- **answers:** En liste over svaralternativene til spørsmålet.
@@ -78,11 +80,11 @@ Lag en ny JSON-fil og legg den i `/public/json`-mappen. Filen må følge den sam
 		- **correct:** En boolsk verdi (true eller false) som indikerer om svaret er korrekt.
 
 ### 2) Legg til quiz i Javascript
-Åpne `/public/scripts/scripts.js` hvor quizdata håndteres, og legg til den nye quizen i `QUIZ_DATA_INDEX_MAP`. Dette kartet kobler en nøkkel til filstien til JSON-filen din.
+Åpne `/public/scripts/scripts.js` hvor quizdata håndteres, og legg til den nye quizen i `QUIZ_DATA_MAP`. Dette kartet kobler en nøkkel til filstien til JSON-filen din.
 ```js
 // QUIZ DATA
-QUIZ_DATA_INDEX_MAP = new Map(); // <- FINN DENNE LINJEN
-QUIZ_DATA_INDEX_MAP.set("my-key", '/json/my-json-file.json'); // <- LEGG TIL DENNE LINJEN
+QUIZ_DATA_MAP = new Map(); // <- FINN DENNE LINJEN
+QUIZ_DATA_MAP.set("my-key", '/data/my-json-file.json'); // <- LEGG TIL DENNE LINJEN
 ```
 
-Bytt ut `"my-key"` med en unik nøkkel for quizzen din, og bytt ut `'/json/my-json-file.json'` med filstien til din JSON-fil.
+Bytt ut `"my-key"` med en unik nøkkel for quizzen din, og bytt ut `'/data/my-json-file.json'` med filstien til din JSON-fil.

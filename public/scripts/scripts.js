@@ -21,9 +21,9 @@ SETTINGS_LIST.forEach(setting => SETTINGS.set(setting, localStorage.getItem(sett
 // END
 
 // QUIZ DATA
-QUIZ_DATA_INDEX_MAP = new Map();
-QUIZ_DATA_INDEX_MAP.set(1, '/json/data_1.json');
-//QUIZ_DATA_INDEX_MAP.set("1", '/json/data_1_small.json');
+QUIZ_DATA_MAP = new Map();
+QUIZ_DATA_MAP.set(1, '/data/data_1.json');
+//QUIZ_DATA_MAP.set("1", '/data/data_1_small.json');
 QUIZ_META_INFO = {}
 CURRENT_QUIZ = {}
 // END OF QUIZ DATA
@@ -72,7 +72,7 @@ function setQuizToPlay(index) {
 }
 
 function isQuizIndexNotValid(index) {
-    if (!QUIZ_DATA_INDEX_MAP.has(index)) {
+    if (!QUIZ_DATA_MAP.has(index)) {
         alert("Index: '" + index + "' does not exist!");
         return true;
     }
@@ -106,7 +106,7 @@ function validateQuiz() {
 function fetchQuizMetaInfo() {
     const fetchPromises = [];
 
-    for (let [key, value] of QUIZ_DATA_INDEX_MAP.entries()) {
+    for (let [key, value] of QUIZ_DATA_MAP.entries()) {
         const fetchPromise = fetch(value)
             .then(response => {
                 if (!response.ok) {
@@ -135,7 +135,7 @@ function fetchQuizMetaInfo() {
 }
 
 function fetchQuizData(index) {
-    return fetch(QUIZ_DATA_INDEX_MAP.get(index))
+    return fetch(QUIZ_DATA_MAP.get(index))
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
@@ -156,18 +156,30 @@ function insertQuizCardsForHomepage() {
     let newQuizCardHtmlContent = "";
 
     for (let [key, value] of Object.entries(QUIZ_META_INFO)) {
-        newQuizCardHtmlContent += '<div id="playable-quiz-card-' + key + '" class="bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 ' +
-            'hover:dark:bg-neutral-700 rounded-xl p-6 cursor-pointer shadow-xl shadow-neutral-200/50 dark:shadow-neutral-800/50" tabindex="0"' +
-            'onclick="setQuizToPlay(' + key + ')">' +
-            '<h2 class="text-xl">' +
-            '<a class="hover:underline font-semibold">' + value.title +
-            ' <span style="color: red;" class="text-underline">[trykk for å spille]</<span></a>' +
-            '</h2>' +
-            '<span class="text-gray-500 mt-2 block">Antall spørsmål: ' + value.length + '</span>' +
-            '</div>'
+        newQuizCardHtmlContent += `
+            <div id="playable-quiz-card-${key}" class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 shadow-xl shadow-black/5 ring-1 ring-indigo-700/10 flex flex-col gap-y-2" tabindex="0" aria-label="Start quiz ${value.title}">
+                <h2 class="w-fit cursor-pointer text-slate-900 dark:text-slate-100 text-xl font-semibold">
+                    <span class="hover:underline" onclick="setQuizToPlay(${key})">${value.title}</span>
+                </h2>
+                <div class="flex flex-col gap-y-2">
+                    <span><a class="hover:underline text-blue-600 dark:text-blue-400" href="${value.document_url}" aria-label="Download document for ${value.title}" download>Last ned dokumentet</a></span>
+                    <span class="text-gray-500 block">Antall spørsmål: ${value.length}</span>
+                </div>
+                <div class="w-min">
+                    <button class="flex flex-row items-center gap-x-2 bg-neutral-950 hover:bg-neutral-950/40 py-2 px-4 font-bold text-white align-middle" onclick="setQuizToPlay(${key})" aria-label="Start quiz ${value.title}">
+                        <span>Spill</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        `;
     }
 
     quizCardsElement.innerHTML = newQuizCardHtmlContent;
+
+    setQuizCountText();
 }
 
 function startQuiz(index) {
@@ -340,6 +352,7 @@ function hideFrontpage() {
 
 function showFrontpage() {
     document.getElementById("front").style.display = 'inherit';
+    setQuizCountText();
 }
 
 function hidePlaypage() {
@@ -353,6 +366,7 @@ function showPlaypage() {
 function setQuizMetaInfoForKey(key, quizObject) {
     QUIZ_META_INFO[key] = {
         "title": quizObject.title,
+        "document_url": quizObject.document_url,
         "length": quizObject.questions.length
     };
 }
@@ -532,6 +546,10 @@ function showSpecificQuizQuestion(questionNumber) {
 
 function setQuizTitle() {
     document.getElementById("play-title").textContent = CURRENT_QUIZ.title;
+}
+
+function setQuizCountText() {
+    document.getElementById("quiz-count").textContent = `(${Object.keys(QUIZ_META_INFO).length})`
 }
 
 function setQuizQuestionsCount() {
