@@ -6,16 +6,16 @@ ANSWER_FORMAT_ORDER = ["a)", "b)", "c)", "d)", "e)", "f)", "g)", "h)"]
 SETTINGS = new Map();
 
 SETTINGS_DARK_MODE_KEY = "DARK_MODE";
-SETTINGS_KEYBOARD_MODE = "KEYBOARD_MODE"
+SETTINGS_KEYBOARD_MODE_KEY = "KEYBOARD_MODE"
 SETTINGS_DEBUG_KEY = "DEBUG";
 SETTINGS_RANDOMIZE_QUESTIONS_KEY = "RANDOMIZE_QUESTIONS";
 SETTINGS_RANDOMIZE_ANSWERS_KEY = "RANDOMIZE_ANSWERS";
-SHOW_QUESTION_NUMBER = "SHOW_QUESTION_NUMBER";
-SHOW_ANSWER_OPTION = "SHOW_ANSWER_OPTION";
+SHOW_QUESTION_NUMBER_KEY = "SHOW_QUESTION_NUMBER";
+SHOW_ANSWER_OPTION_KEY = "SHOW_ANSWER_OPTION";
 
-SETTINGS_LIST = [SETTINGS_DARK_MODE_KEY, SETTINGS_KEYBOARD_MODE, SETTINGS_DEBUG_KEY,
-	SETTINGS_RANDOMIZE_QUESTIONS_KEY, SETTINGS_RANDOMIZE_ANSWERS_KEY, SHOW_QUESTION_NUMBER, 
-	SHOW_ANSWER_OPTION]
+SETTINGS_LIST = [SETTINGS_DARK_MODE_KEY, SETTINGS_KEYBOARD_MODE_KEY, SETTINGS_DEBUG_KEY,
+	SETTINGS_RANDOMIZE_QUESTIONS_KEY, SETTINGS_RANDOMIZE_ANSWERS_KEY, SHOW_QUESTION_NUMBER_KEY, 
+	SHOW_ANSWER_OPTION_KEY]
 
 SETTINGS_LIST.forEach(setting => SETTINGS.set(setting, localStorage.getItem(setting) || false));
 // END
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     fetchQuizMetaInfo();
 
-    initUpKeyListener();
+    initKeyDownListener();
 
     initAnalytics();
 });
@@ -468,7 +468,7 @@ function shuffle(array) {
 
 function setQuizQuestionText(questionObject) {
     let text;
-    if (getSettingsValue(SHOW_QUESTION_NUMBER)) {
+    if (getSettingsValue(SHOW_QUESTION_NUMBER_KEY)) {
         text = questionObject.question;
     } else {
         const substringIndex = questionObject.question.indexOf(".") + 1;
@@ -480,7 +480,7 @@ function setQuizQuestionText(questionObject) {
 
 function setAnswerText(answer, answerElement, index) {
     let text;
-    if (getSettingsValue(SHOW_ANSWER_OPTION)) {
+    if (getSettingsValue(SHOW_ANSWER_OPTION_KEY)) {
         text = answer.text;
     } else {
         const answerElementSubStringIndex = answer.text.indexOf(")") + 2;
@@ -488,7 +488,7 @@ function setAnswerText(answer, answerElement, index) {
     }
 
     // Show digit value for keyboard user
-    if (getSettingsValue(SETTINGS_KEYBOARD_MODE)) {
+    if (getSettingsValue(SETTINGS_KEYBOARD_MODE_KEY)) {
     	text += " [" + (index+1) + "]";
     }
 
@@ -545,7 +545,7 @@ function getAnswerCardElementId(index) {
 	return ANSWER_CARD_START_ID_NAME + index;
 }
 
-function initUpKeyListener() {
+function initKeyDownListener() {
 	document.addEventListener("keydown", (event) => {
 		
 		// Enable tab & enter by default
@@ -575,7 +575,7 @@ function initUpKeyListener() {
 		}
 
 		// However, for 1, 2, 3, left- and right arrows, check if setting is enabled
-		if (!getSettingsValue(SETTINGS_KEYBOARD_MODE)) {
+		if (!getSettingsValue(SETTINGS_KEYBOARD_MODE_KEY)) {
 			return;
 		}
 
