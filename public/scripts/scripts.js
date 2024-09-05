@@ -157,10 +157,11 @@ function insertQuizCardsForHomepage() {
 
     for (let [key, value] of Object.entries(QUIZ_META_INFO)) {
         newQuizCardHtmlContent += '<div id="playable-quiz-card-' + key + '" class="bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 ' +
-            'hover:dark:bg-neutral-700 rounded-xl p-6 cursor-pointer" tabindex="0"' +
+            'hover:dark:bg-neutral-700 rounded-xl p-6 cursor-pointer shadow-xl shadow-neutral-200/50 dark:shadow-neutral-800/50" tabindex="0"' +
             'onclick="setQuizToPlay(' + key + ')">' +
             '<h2 class="text-xl">' +
-            '<a class="hover:underline font-semibold">' + value.title + '</a>' +
+            '<a class="hover:underline font-semibold">' + value.title +
+            ' <span style="color: red;" class="text-underline">[trykk for å spille]</<span></a>' +
             '</h2>' +
             '<span class="text-gray-500 mt-2 block">Antall spørsmål: ' + value.length + '</span>' +
             '</div>'
