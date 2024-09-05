@@ -10,10 +10,10 @@ var path = require('path');
 const app = express();
 
 // compression
-app.use(compression({ filter: shouldCompress }));
+//app.use(compression({ filter: shouldCompress }));
 
 // minify
-app.use(minify());
+//app.use(minify());
 
 // Set up static file serving
 app.use(express.static(path.join(__dirname, 'public')));
