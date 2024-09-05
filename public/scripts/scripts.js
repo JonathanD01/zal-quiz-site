@@ -1,4 +1,4 @@
-ANSWER_CARD_START_ID_NAME = "play-card-";
+ANSWER_CARD_START_ID_NAME = "answer-card-";
 
 ANSWER_FORMAT_ORDER = ["a)", "b)", "c)", "d)", "e)", "f)", "g)", "h)"]
 
@@ -6,17 +6,18 @@ ANSWER_FORMAT_ORDER = ["a)", "b)", "c)", "d)", "e)", "f)", "g)", "h)"]
 SETTINGS = new Map();
 
 SETTINGS_DARK_MODE_KEY = "DARK_MODE";
+SETTINGS_KEYBOARD_MODE = "KEYBOARD_MODE"
 SETTINGS_DEBUG_KEY = "DEBUG";
-SETTINGS_SORT_QUESTIONS_KEY = "SORT_QUESTIONS";
-SETTINGS_SORT_ANSWERS_KEY = "SORT_ANSWERS";
+SETTINGS_RANDOMIZE_QUESTIONS_KEY = "RANDOMIZE_QUESTIONS";
+SETTINGS_RANDOMIZE_ANSWERS_KEY = "RANDOMIZE_ANSWERS";
 SHOW_QUESTION_NUMBER = "SHOW_QUESTION_NUMBER";
 SHOW_ANSWER_OPTION = "SHOW_ANSWER_OPTION";
 
-SETTINGS.set(SETTINGS_DARK_MODE_KEY, localStorage.getItem(SETTINGS_DARK_MODE_KEY) || false);
-SETTINGS.set(SETTINGS_DEBUG_KEY, localStorage.getItem(SETTINGS_DEBUG_KEY) || false);
-SETTINGS.set(SETTINGS_SORT_QUESTIONS_KEY, localStorage.getItem(SETTINGS_SORT_QUESTIONS_KEY) || false);
-SETTINGS.set(SETTINGS_SORT_ANSWERS_KEY, localStorage.getItem(SETTINGS_SORT_ANSWERS_KEY) || false);
-SETTINGS.set(SHOW_ANSWER_OPTION, localStorage.getItem(SHOW_ANSWER_OPTION) || false);
+SETTINGS_LIST = [SETTINGS_DARK_MODE_KEY, SETTINGS_KEYBOARD_MODE, SETTINGS_DEBUG_KEY,
+	SETTINGS_RANDOMIZE_QUESTIONS_KEY, SETTINGS_RANDOMIZE_ANSWERS_KEY, SHOW_QUESTION_NUMBER, 
+	SHOW_ANSWER_OPTION]
+
+SETTINGS_LIST.forEach(setting => SETTINGS.set(setting, localStorage.getItem(setting) || false));
 // END
 
 // QUIZ DATA
@@ -24,37 +25,43 @@ QUIZ_DATA_INDEX_MAP = new Map();
 QUIZ_DATA_INDEX_MAP.set(1, '/json/data_1.json');
 //QUIZ_DATA_INDEX_MAP.set("1", '/json/data_1_small.json');
 QUIZ_META_INFO = {}
-QUIZ = {}
+CURRENT_QUIZ = {}
 // END OF QUIZ DATA
 
 // CAN CHANGE
 ANSWERED_QUESTION_INDEXES = new Map();
-CURRENT_QUESTION_INDEX = 1;
+CURRENT_QUESTION_NUMBER = 1;
+// END
+
+// KEY CODE
+DIGIT_1_KEY_CODE = 49;
 // END
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    if (getBoolSettingsValue(SETTINGS_DEBUG_KEY)) {
+    if (getSettingsValue(SETTINGS_DEBUG_KEY)) {
         showDebugDiv();
         console.log("DOM fully loaded and parsed");
     }
 
-    if (getBoolSettingsValue(SETTINGS_DARK_MODE_KEY)
+    if (getSettingsValue(SETTINGS_DARK_MODE_KEY)
     	|| window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    	setBoolSettingsValue(SETTINGS_DARK_MODE_KEY, true);
+    	setSettingsValue(SETTINGS_DARK_MODE_KEY, true);
         document.documentElement.classList.add('dark');
     }
 
-    initSettingsCheckboxes();
+    setValuesForSettingCheckboxes();
 
     fetchQuizMetaInfo();
+
+    initUpKeyListener();
 
     initAnalytics();
 });
 
 function setQuizToPlay(index) {
-    if (!validateQuizIndex(index)) {
-        console.log("Invalid quiz index");
+    if (isQuizIndexNotValid(index)) {
+        debugMessage("Invalid quiz index");
         return;
     }
 
@@ -64,34 +71,34 @@ function setQuizToPlay(index) {
     startQuiz(index);
 }
 
-function validateQuizIndex(index) {
+function isQuizIndexNotValid(index) {
     if (!QUIZ_DATA_INDEX_MAP.has(index)) {
         alert("Index: '" + index + "' does not exist!");
-        return false;
+        return true;
     }
-    return true;
+    return false;
 }
 
 function validateQuiz() {
-    for (let i = 0; i < QUIZ.questions.length; i++) {
+    for (let i = 0; i < CURRENT_QUIZ.questions.length; i++) {
         let correctAnswers = 0;
-        for (let j = 0; j < QUIZ.questions[i].answers.length; j++) {
-            if (QUIZ.questions[i].answers[j].correct) {
+        for (let j = 0; j < CURRENT_QUIZ.questions[i].answers.length; j++) {
+            if (CURRENT_QUIZ.questions[i].answers[j].correct) {
                 correctAnswers += 1;
             }
 
             const questionPrefix = ANSWER_FORMAT_ORDER[j];
-            if (!QUIZ.questions[i].answers[j].text.startsWith(questionPrefix)) {
-                console.log("Answer at question '" + QUIZ.questions[i].question + "' has wrong asnwer order!");
-                console.log(j, questionPrefix, QUIZ.questions[i].answers[j].text);
+            if (!CURRENT_QUIZ.questions[i].answers[j].text.startsWith(questionPrefix)) {
+                alert("Answer at question '" + CURRENT_QUIZ.questions[i].question + "' has wrong asnwer order!");
+                alert(j, questionPrefix, CURRENT_QUIZ.questions[i].answers[j].text);
             }
         }
 
 
         if (correctAnswers > 1) {
-            console.log("Question '" + QUIZ.questions[i].question + "' has more than 1 correct answer!");
+            alert("Question '" + CURRENT_QUIZ.questions[i].question + "' has more than 1 correct answer!");
         } else if (correctAnswers <= 0) {
-            console.log("Question '" + QUIZ.questions[i].question + "' has less or 0 correct answer!");
+            alert("Question '" + CURRENT_QUIZ.questions[i].question + "' has less or 0 correct answer!");
         }
     }
 }
@@ -108,7 +115,7 @@ function fetchQuizMetaInfo() {
                 return response.json();
             })
             .then(data => {
-                setQuizMetaInfo(key, data);
+                setQuizMetaInfoForKey(key, data);
             })
             .catch(error => {
                 console.error('There was a problem with the fetch operation:', error);
@@ -120,7 +127,7 @@ function fetchQuizMetaInfo() {
     // Wait until all fetch requests are done
     Promise.all(fetchPromises)
         .then(() => {
-            displayAllQuizCards();
+            insertQuizCardsForHomepage();
         })
         .catch(error => {
             console.error('There was a problem processing all quizzes:', error);
@@ -143,14 +150,14 @@ function fetchQuizData(index) {
         });
 }
 
-function displayAllQuizCards() {
+function insertQuizCardsForHomepage() {
     const quizCardsElement = document.getElementById("quiz-cards");
 
     let newQuizCardHtmlContent = "";
 
     for (let [key, value] of Object.entries(QUIZ_META_INFO)) {
-        newQuizCardHtmlContent += '<div class="bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 ' +
-            'hover:dark:bg-neutral-700 rounded-xl p-6 cursor-pointer" ' +
+        newQuizCardHtmlContent += '<div id="playable-quiz-card-' + key + '" class="bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 ' +
+            'hover:dark:bg-neutral-700 rounded-xl p-6 cursor-pointer" tabindex="0"' +
             'onclick="setQuizToPlay(' + key + ')">' +
             '<h2 class="text-xl">' +
             '<a class="hover:underline font-semibold">' + value.title + '</a>' +
@@ -162,8 +169,6 @@ function displayAllQuizCards() {
     quizCardsElement.innerHTML = newQuizCardHtmlContent;
 }
 
-
-
 function startQuiz(index) {
     fetchQuizData(index)
         .then(() => {
@@ -174,7 +179,7 @@ function startQuiz(index) {
             setQuizTitle();
             setQuizQuestionsCount();
 
-            displayQuestion();
+            showCurrentQuestion();
         })
         .catch(error => {
             console.error('Error starting the quiz:', error);
@@ -182,28 +187,27 @@ function startQuiz(index) {
 
 }
 
-function displayQuestion() {
+function showCurrentQuestion() {
     question = getCurrentQuestion();
-
-    validateCurrentQuestionHasCorrectAnswer(question);
 
     setQuizQuestionText(question);
     updateCurrentQuestionIndexText();
 
-    const answeredElement = hasAnsweredQuizQuestion() ? document.getElementById(ANSWER_CARD_START_ID_NAME + ANSWERED_QUESTION_INDEXES.get(CURRENT_QUESTION_INDEX)) : null;
+    const answeredElement = hasAnsweredQuestion() ? document.getElementById(getAnswerCardElementId(ANSWERED_QUESTION_INDEXES.get(CURRENT_QUESTION_NUMBER))) : null;
     let answeredCorrect = false;
     let correctAnswerElement = null;
 
     // Fill questions
     for (let i = 0; i < question.answers.length; i++) {
-        const elementId = ANSWER_CARD_START_ID_NAME + i;
+        const elementId = getAnswerCardElementId(i);
         const answerElement = document.getElementById(elementId);
 
-        setAnswerText(question.answers[i], answerElement);
+        setAnswerText(question.answers[i], answerElement, i);
+
         answerElement.style.display = "inherit";
 
         // Handle answered logic
-        if (!hasAnsweredQuizQuestion()) {
+        if (!hasAnsweredQuestion()) {
             continue;
         }
 
@@ -220,14 +224,14 @@ function displayQuestion() {
     }
 
     // Handle feedback if a question has been answered
-    if (hasAnsweredQuizQuestion()) {
-        handleFeedback(answeredElement, answeredCorrect, correctAnswerElement);
+    if (hasAnsweredQuestion()) {
+        showFeedback(answeredElement, answeredCorrect, correctAnswerElement);
     }
 }
 
 
-function handleAnswerClick(element, ignoreCheck = false) {
-    if (hasAnsweredQuizQuestion()) {
+function handleAnswerClicked(element, ignoreCheck = false) {
+    if (hasAnsweredQuestion()) {
         return;
     }
 
@@ -238,23 +242,23 @@ function handleAnswerClick(element, ignoreCheck = false) {
 
     const correctAnswerObject = getCorrectAnswer();
     const correctAnswerIndex = correctAnswerObject.index;
-    const correctAnswerElement = document.getElementById(ANSWER_CARD_START_ID_NAME + correctAnswerIndex);
+    const correctAnswerElement = document.getElementById(getAnswerCardElementId(correctAnswerIndex));
 
     const answeredCorrect = (parseInt(clickedIndex) == parseInt(correctAnswerIndex));
 
-    handleFeedback(element, answeredCorrect, correctAnswerElement);
-    setQuizQuestionAnswered(clickedIndex);
+    showFeedback(element, answeredCorrect, correctAnswerElement);
+    setQuestionAnswered(clickedIndex);
 }
 
-function hasAnsweredQuizQuestion() {
-    return ANSWERED_QUESTION_INDEXES.has(CURRENT_QUESTION_INDEX);
+function hasAnsweredQuestion() {
+    return ANSWERED_QUESTION_INDEXES.has(CURRENT_QUESTION_NUMBER);
 }
 
-function setQuizQuestionAnswered(clickedIndex) {
-    ANSWERED_QUESTION_INDEXES.set(CURRENT_QUESTION_INDEX, clickedIndex);
+function setQuestionAnswered(clickedIndex) {
+    ANSWERED_QUESTION_INDEXES.set(CURRENT_QUESTION_NUMBER, clickedIndex);
 }
 
-function handleFeedback(clickedElement, answeredCorrect, correctAnswerElement) {
+function showFeedback(clickedElement, answeredCorrect, correctAnswerElement) {
     const feedbackElement = document.getElementById("play-answer-feedback");
 
     if (answeredCorrect) {
@@ -270,56 +274,55 @@ function handleFeedback(clickedElement, answeredCorrect, correctAnswerElement) {
     }
 }
 
-function handleNextQuestion() {
+function nextQuestionButtonPressed() {
     // They need to answer before proceeding
-    if (!hasAnsweredQuizQuestion() && !getBoolSettingsValue(SETTINGS_DEBUG_KEY)) {
+    if (!hasAnsweredQuestion() && !getSettingsValue(SETTINGS_DEBUG_KEY)) {
         alert("Du må svare på spørsmålet før du fortsetter!");
         return;
     }
 
-    if (hasCompletedAllQuestions()) {
+    if (isOnLastQuestion()) {
         return;
     }
 
-    CURRENT_QUESTION_INDEX += 1;
+    CURRENT_QUESTION_NUMBER += 1;
 
     resetUserInputs();
 
-    displayQuestion();
+    showCurrentQuestion();
 }
 
 
-function handlePreviousQuestion() {
+function previousQuestionButtonPressed() {
     if (isOnFirstQuestion()) {
         alert("Du er allerede på det første spørsmålet!");
         return;
     }
 
-    CURRENT_QUESTION_INDEX -= 1;
+    CURRENT_QUESTION_NUMBER -= 1;
 
     resetUserInputs();
 
-    displayQuestion();
+    showCurrentQuestion();
 }
 
 function isOnFirstQuestion() {
-    return CURRENT_QUESTION_INDEX == 1;
+    return CURRENT_QUESTION_NUMBER == 1;
 }
 
-function hasCompletedAllQuestions() {
-    if (CURRENT_QUESTION_INDEX >= QUIZ.questions.length) {
-        alert("Du har fullført quizen");
+function isOnLastQuestion() {
+    if (CURRENT_QUESTION_NUMBER >= CURRENT_QUIZ.questions.length) {
+        alert("Enden på quizen er nådd!");
         return true;
     }
     return false;
 }
 
 function resetUserInputs() {
-
     // Reset answers
-    const answerCards = document.getElementById("play-cards").children;
+    const answerCards = document.getElementById("answer-cards").children;
     for (let i = 0; i < answerCards.length; i++) {
-        const answerCardElement = document.getElementById("play-cards").children[i];
+        const answerCardElement = document.getElementById("answer-cards").children[i];
 
         answerCardElement.style.opacity = 1;
         answerCardElement.style.borderColor = "transparent";
@@ -346,31 +349,19 @@ function showPlaypage() {
     document.getElementById("play").style.display = 'inherit';
 }
 
-function setQuizMetaInfo(index, quiz) {
-    QUIZ_META_INFO[index] = {
-        "title": quiz.title,
-        "length": quiz.questions.length
+function setQuizMetaInfoForKey(key, quizObject) {
+    QUIZ_META_INFO[key] = {
+        "title": quizObject.title,
+        "length": quizObject.questions.length
     };
 }
 
 function setQuiz(data) {
-    QUIZ = data;
+    CURRENT_QUIZ = data;
 }
 
 function getCurrentQuestion() {
-    return QUIZ.questions[CURRENT_QUESTION_INDEX - 1];
-}
-
-function validateCurrentQuestionHasCorrectAnswer(questionObject) {
-    let valid = false;
-    for (let i = 0; i < questionObject.answers.length; i++) {
-        if (questionObject.answers[i].correct) {
-            valid = true;
-        }
-    }
-    if (!valid) {
-        alert("Question '" + questionObject.question + "' does not have a correct answer!")
-    }
+    return CURRENT_QUIZ.questions[CURRENT_QUESTION_NUMBER - 1];
 }
 
 // returns { "answer": getCurrentQuestion().answers[i], "index": i }
@@ -387,44 +378,49 @@ function getCorrectAnswer() {
 
 function showHome() {
     resetQuiz();
+    removeCurrentQuiz();
     hidePlaypage();
     showFrontpage();
-    initSettingsCheckboxes();
+    setValuesForSettingCheckboxes();
 }
 
 function resetQuiz() {
     ANSWERED_QUESTION_INDEXES = new Map();
-    CURRENT_QUESTION_INDEX = 1;
+    CURRENT_QUESTION_NUMBER = 1;
 
     resetUserInputs();
 
     shuffleQuiz();
 
-    displayQuestion();
+    showCurrentQuestion();
 }
 
-function initSettingsCheckboxes() {
-    document.getElementById(SETTINGS_DARK_MODE_KEY).checked = getBoolSettingsValue(SETTINGS_DARK_MODE_KEY);
-    document.getElementById(SETTINGS_DEBUG_KEY).checked = getBoolSettingsValue(SETTINGS_DEBUG_KEY);
-    document.getElementById(SETTINGS_SORT_QUESTIONS_KEY).checked = getBoolSettingsValue(SETTINGS_SORT_QUESTIONS_KEY);
-    document.getElementById(SETTINGS_SORT_ANSWERS_KEY).checked = getBoolSettingsValue(SETTINGS_SORT_ANSWERS_KEY);
-    document.getElementById(SHOW_QUESTION_NUMBER).checked = getBoolSettingsValue(SHOW_QUESTION_NUMBER);
-    document.getElementById(SHOW_ANSWER_OPTION).checked = getBoolSettingsValue(SHOW_ANSWER_OPTION);
+function removeCurrentQuiz() {
+	CURRENT_QUIZ = {}
+}
+
+function setValuesForSettingCheckboxes() {
+	SETTINGS_LIST.forEach(setting => 
+		document.getElementById(setting).checked = getSettingsValue(setting));
 }
 
 function handleSettingsChecked(element) {
-    setBoolSettingsValue(element.id);
+    setSettingsValue(element.id);
 }
 
-function getBoolSettingsValue(key) {
+function getSettingsValue(key) {
     return localStorage.getItem(key) === "true";
 }
 
-function setBoolSettingsValue(key, e = null) {
+function setSettingsValue(key, e = null) {
     value = e || !(JSON.parse(localStorage.getItem(key)))
     localStorage.setItem(key, value);
 
-    if (key === SETTINGS_DARK_MODE_KEY) {
+    handleSettingUpdated(key);
+}
+
+function handleSettingUpdated(key) {
+	if (key === SETTINGS_DARK_MODE_KEY) {
         document.documentElement.classList.toggle('dark');
     }
 
@@ -436,18 +432,18 @@ function setBoolSettingsValue(key, e = null) {
 }
 
 function shuffleQuiz() {
-    if (getBoolSettingsValue(SETTINGS_DEBUG_KEY)) {
+    if (getSettingsValue(SETTINGS_DEBUG_KEY)) {
         console.log("Cannot shuffle while in debug mode");
         return;
     }
 
-    if (getBoolSettingsValue(SETTINGS_SORT_QUESTIONS_KEY)) {
-        shuffle(QUIZ.questions);
+    if (getSettingsValue(SETTINGS_RANDOMIZE_QUESTIONS_KEY)) {
+        shuffle(CURRENT_QUIZ.questions);
     }
 
-    if (getBoolSettingsValue(SETTINGS_SORT_ANSWERS_KEY)) {
-        for (let i = 0; i < QUIZ.questions.length; i++) {
-            shuffle(QUIZ.questions[i].answers);
+    if (getSettingsValue(SETTINGS_RANDOMIZE_ANSWERS_KEY)) {
+        for (let i = 0; i < CURRENT_QUIZ.questions.length; i++) {
+            shuffle(CURRENT_QUIZ.questions[i].answers);
         }
     }
 }
@@ -472,7 +468,7 @@ function shuffle(array) {
 
 function setQuizQuestionText(questionObject) {
     let text;
-    if (getBoolSettingsValue(SHOW_QUESTION_NUMBER)) {
+    if (getSettingsValue(SHOW_QUESTION_NUMBER)) {
         text = questionObject.question;
     } else {
         const substringIndex = questionObject.question.indexOf(".") + 1;
@@ -482,13 +478,18 @@ function setQuizQuestionText(questionObject) {
     document.getElementById("quiz-question").textContent = text;
 }
 
-function setAnswerText(answer, answerElement) {
+function setAnswerText(answer, answerElement, index) {
     let text;
-    if (getBoolSettingsValue(SHOW_ANSWER_OPTION)) {
+    if (getSettingsValue(SHOW_ANSWER_OPTION)) {
         text = answer.text;
     } else {
         const answerElementSubStringIndex = answer.text.indexOf(")") + 2;
         text = answer.text.substring(answerElementSubStringIndex);
+    }
+
+    // Show digit value for keyboard user
+    if (getSettingsValue(SETTINGS_KEYBOARD_MODE)) {
+    	text += " [" + (index+1) + "]";
     }
 
     answerElement.textContent = text;
@@ -514,7 +515,7 @@ function goToSpecificQuestion() {
 
 function showSpecificQuizQuestion(questionNumber) {
     const questionIndex = questionNumber;
-    const quizSize = QUIZ.questions.length;
+    const quizSize = CURRENT_QUIZ.questions.length;
 
     if (questionIndex > quizSize) {
         alert("This quiz only have " + quizSize + " questions");
@@ -523,21 +524,98 @@ function showSpecificQuizQuestion(questionNumber) {
 
     resetUserInputs();
 
-    CURRENT_QUESTION_INDEX = Math.max(1, questionIndex);
+    CURRENT_QUESTION_NUMBER = Math.max(1, questionIndex);
 
-    displayQuestion();
+    showCurrentQuestion();
 }
 
 function setQuizTitle() {
-    document.getElementById("play-title").textContent = QUIZ.title;
+    document.getElementById("play-title").textContent = CURRENT_QUIZ.title;
 }
 
 function setQuizQuestionsCount() {
-    document.getElementById("quiz-questions-count").textContent = QUIZ.questions.length;
+    document.getElementById("quiz-questions-count").textContent = CURRENT_QUIZ.questions.length;
 }
 
 function updateCurrentQuestionIndexText() {
-    document.getElementById("current-quiz-question-index").textContent = CURRENT_QUESTION_INDEX;
+    document.getElementById("current-quiz-question-index").textContent = CURRENT_QUESTION_NUMBER;
+}
+
+function getAnswerCardElementId(index) {
+	return ANSWER_CARD_START_ID_NAME + index;
+}
+
+function initUpKeyListener() {
+	document.addEventListener("keydown", (event) => {
+		
+		// Enable tab & enter by default
+		const pressedKeyCode = event.keyCode;
+
+		const pressedEnter = pressedKeyCode === 13;
+
+		const isPlayingAQuiz = Object.keys(CURRENT_QUIZ).length >= 1;
+
+		const pressedEnterOnAnInput = pressedEnter && !isPlayingAQuiz 
+			&& event.target && event.target.tagName === "INPUT";
+
+		const pressedEnterOnAPlayableQuiz = pressedEnter && !isPlayingAQuiz 
+			&& event.target && event.target.id.startsWith("playable-quiz-card");
+
+		const pressedEnterOnAnAnswer = pressedEnter && isPlayingAQuiz 
+			&& event.target && event.target.id.startsWith(ANSWER_CARD_START_ID_NAME);
+
+		const pressedPreviousOrNextButton = pressedEnter && isPlayingAQuiz 
+			&& event.target 
+			&& (event.target.id === "previous-question-button" || event.target.id === "next-question-button");
+			
+		if (pressedEnterOnAnInput || pressedEnterOnAPlayableQuiz 
+				|| pressedEnterOnAnAnswer || pressedPreviousOrNextButton) {
+			event.target.click();
+			return;
+		}
+
+		// However, for 1, 2, 3, left- and right arrows, check if setting is enabled
+		if (!getSettingsValue(SETTINGS_KEYBOARD_MODE)) {
+			return;
+		}
+
+		if (!isPlayingAQuiz) {
+			debugMessage("keyListener ignored, no active quiz");
+			return;
+		}
+
+		const availableAnswersLength = getCurrentQuestion().answers.length-1
+		const maxAnswerCardsCount = availableAnswersLength;
+		const highestKeyCode = Math.max(DIGIT_1_KEY_CODE, DIGIT_1_KEY_CODE+maxAnswerCardsCount);
+
+		const pressedLeftArrowKey = pressedKeyCode === 37;
+		const pressedRightArrowKey = pressedKeyCode === 39;
+		const pressedInvalidKey = (pressedKeyCode < DIGIT_1_KEY_CODE 
+			|| pressedKeyCode > highestKeyCode) && !pressedLeftArrowKey && !pressedRightArrowKey;
+
+		if (pressedInvalidKey) {
+			debugMessage("pressed invalid key: " + event.code)
+			return;
+		}
+
+		debugMessage("pressed: " + event.code + ", index: " + (pressedKeyCode - DIGIT_1_KEY_CODE));
+
+		if (pressedLeftArrowKey) {
+			document.getElementById("previous-question-button").click();
+		} else if (pressedRightArrowKey) {
+			document.getElementById("next-question-button").click();
+		} else {
+			const playcardIndex = pressedKeyCode - DIGIT_1_KEY_CODE;
+			document.getElementById(getAnswerCardElementId(playcardIndex)).click();
+		}
+
+	});
+}
+
+function debugMessage(msg) {
+	if (getSettingsValue(SETTINGS_DEBUG_KEY)) {
+		console.log(msg);
+	}
 }
 
 function initAnalytics() {

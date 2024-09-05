@@ -59,6 +59,13 @@
             font-family: 'Roboto', sans-serif;
         }
 
+        svg {
+            min-width: 24px;
+            min-height: 24px;
+            max-width: 24px;
+            max-height: 24px;
+        }
+
         .text-underline {
             text-decoration: underline;
         }
@@ -78,7 +85,7 @@
                     <img src="/images/logo/quiz.png" />
                 </picture>
 
-                <h1 class="text-2xl md:text-4xl lg:text-6xl font-bold">Quizer</h1>
+                <h1 class="text-2xl md:text-4xl lg:text-6xl xl:text-8xl font-bold">Quizer</h1>
             </div>
 
             <!-- Quizer -->
@@ -127,13 +134,12 @@
                             </svg>
                             <span>Mørk modus</span>
                         </div>
-
                     </div>
 
                     <div class="flex flex-row items-center gap-x-4">
                         <div class="inline-flex items-center">
                             <label class="flex items-center cursor-pointer relative">
-                                <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="SORT_QUESTIONS" onclick="handleSettingsChecked(this)" />
+                                <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="KEYBOARD_MODE" onclick="handleSettingsChecked(this)" />
                                 <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
@@ -141,13 +147,33 @@
                                 </span>
                             </label>
                         </div>
+                        <div class="flex flex-row gap-x-2 items-center">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 13H6.01M6 17H6.01M10 13H10.01M14 13H14.01M18 17H18.01M18 13H18.01M16 3V5H8V9M10 17H14M5.2 21H18.8C19.9201 21 20.4802 21 20.908 20.782C21.2843 20.5903 21.5903 20.2843 21.782 19.908C22 19.4802 22 18.9201 22 17.8V12.2C22 11.0799 22 10.5198 21.782 10.092C21.5903 9.71569 21.2843 9.40973 20.908 9.21799C20.4802 9 19.9201 9 18.8 9H5.2C4.07989 9 3.51984 9 3.09202 9.21799C2.71569 9.40973 2.40973 9.71569 2.21799 10.092C2 10.5198 2 11.0799 2 12.2V17.8C2 18.9201 2 19.4802 2.21799 19.908C2.40973 20.2843 2.71569 20.5903 3.09202 20.782C3.51984 21 4.0799 21 5.2 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                            <span>Tastaturmodus: Talltastene (1, 2, 3, osv.) kan brukes for å velge svar, og piltastene for å navigere mellom spørsmålene.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row items-center gap-x-4">
+                        <div class="inline-flex items-center">
+                            <label class="flex items-center cursor-pointer relative">
+                                <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="RANDOMIZE_QUESTIONS" onclick="handleSettingsChecked(this)" />
+                                <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="flex flex-row items-center gap-x-2">
+                            <svg fill="currentColor" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>random</title> <path d="M0 24q0 0.832 0.576 1.44t1.44 0.576h1.984q2.048 0 3.904-0.8t3.168-2.144 2.144-3.2 0.8-3.872q0-2.464 1.728-4.224t4.256-1.76h4v1.984q0 0.672 0.384 1.152t0.864 0.704 1.12 0.128 1.056-0.544l4-4q0.608-0.64 0.576-1.44t-0.576-1.408l-4-4q-0.48-0.448-1.088-0.544t-1.12 0.128-0.864 0.704-0.352 1.12v2.016h-4q-2.016 0-3.872 0.8t-3.2 2.112-2.144 3.2-0.768 3.872q0 2.496-1.76 4.256t-4.256 1.76h-1.984q-0.832 0-1.44 0.576t-0.576 1.408zM0 8.032q0 0.832 0.576 1.408t1.44 0.576h1.984q1.408 0 2.592 0.608t2.080 1.664q0.672-2.048 1.984-3.68-2.912-2.592-6.656-2.592h-1.984q-0.832 0-1.44 0.608t-0.576 1.408zM13.376 23.456q2.848 2.56 6.624 2.56h4v2.016q0 0.64 0.384 1.152t0.864 0.704 1.12 0.096 1.056-0.544l4-4q0.608-0.608 0.576-1.44t-0.576-1.376l-4-4q-0.48-0.48-1.088-0.576t-1.12 0.128-0.864 0.736-0.352 1.12v1.984h-4q-1.376 0-2.592-0.576t-2.048-1.664q-0.704 2.048-1.984 3.68z"></path> </g></svg>
                         <span>Sorter spørsmålene i tilfeldig rekkefølge</span>
+                        </div>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-4">
                         <div class="inline-flex items-center">
                             <label class="flex items-center cursor-pointer relative">
-                                <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="SORT_ANSWERS" onclick="handleSettingsChecked(this)" />
+                                <input type="checkbox" class="peer h-5 w-5 cursor-pointer transition-all appearance-none rounded shadow hover:shadow-md border border-slate-300 checked:bg-slate-800 checked:border-slate-800" id="RANDOMIZE_ANSWERS" onclick="handleSettingsChecked(this)" />
                                 <span class="absolute text-white opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" stroke-width="1">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
@@ -155,7 +181,10 @@
                                 </span>
                             </label>
                         </div>
+                        <div class="flex flex-row items-center gap-x-2">
+                            <svg fill="currentColor" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>random</title> <path d="M0 24q0 0.832 0.576 1.44t1.44 0.576h1.984q2.048 0 3.904-0.8t3.168-2.144 2.144-3.2 0.8-3.872q0-2.464 1.728-4.224t4.256-1.76h4v1.984q0 0.672 0.384 1.152t0.864 0.704 1.12 0.128 1.056-0.544l4-4q0.608-0.64 0.576-1.44t-0.576-1.408l-4-4q-0.48-0.448-1.088-0.544t-1.12 0.128-0.864 0.704-0.352 1.12v2.016h-4q-2.016 0-3.872 0.8t-3.2 2.112-2.144 3.2-0.768 3.872q0 2.496-1.76 4.256t-4.256 1.76h-1.984q-0.832 0-1.44 0.576t-0.576 1.408zM0 8.032q0 0.832 0.576 1.408t1.44 0.576h1.984q1.408 0 2.592 0.608t2.080 1.664q0.672-2.048 1.984-3.68-2.912-2.592-6.656-2.592h-1.984q-0.832 0-1.44 0.608t-0.576 1.408zM13.376 23.456q2.848 2.56 6.624 2.56h4v2.016q0 0.64 0.384 1.152t0.864 0.704 1.12 0.096 1.056-0.544l4-4q0.608-0.608 0.576-1.44t-0.576-1.376l-4-4q-0.48-0.48-1.088-0.576t-1.12 0.128-0.864 0.736-0.352 1.12v1.984h-4q-1.376 0-2.592-0.576t-2.048-1.664q-0.704 2.048-1.984 3.68z"></path> </g></svg>
                         <span>Sorter svarene i tilfeldig rekkefølge</span>
+                        </div>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-4">
@@ -169,7 +198,13 @@
                                 </span>
                             </label>
                         </div>
+                        <div class="flex flex-row items-center gap-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
                         <span>Vis spørsmål nummer (f.eks. 90. Hva er ikke riktig når det gjelder feber?)</span>
+                        </div>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-4">
@@ -183,7 +218,13 @@
                                 </span>
                             </label>
                         </div>
+                        <div class="flex flex-row items-center gap-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
                         <span>Vis svar alternativ prefix [f.eks. a) Feber er en uvanlig indikator på en inflammasjon]</span>
+                        </div>
                     </div>
 
                     <div class="flex flex-row items-center gap-x-4">
@@ -272,22 +313,27 @@
             <!-- answer cards -->
             <div class="grid grid-cols-2 md:grid-cols-[40px_1fr_40px] gap-x-12 gap-y-4 items-center md:min-h-[350px]">
 
-                <div class="order-2 md:order-1 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 w-full md:w-auto rounded-xl mx-auto p-4 cursor-pointer" onclick="handlePreviousQuestion()">
+                <div id="previous-question-button" class="order-2 md:order-1 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 w-full md:w-auto rounded-xl mx-auto p-4 cursor-pointer" onclick="previousQuestionButtonPressed()" tabindex="0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                     </svg>
                 </div>
 
-                <div id="play-cards" class="order-1 md:order-2 col-span-2 md:col-span-1 grid md:grid-cols-2 gap-4 text-xl select-none">
-                    <div id="play-card-0" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClick(this)"></div>
-                    <div id="play-card-1" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClick(this)"></div>
-                    <div id="play-card-2" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClick(this)"></div>
-                    <div id="play-card-3" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClick(this)"></div>
-                    <div id="play-card-4" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClick(this)"></div>
-                    <div id="play-card-5" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClick(this)"></div>
+                <div id="answer-cards" class="order-1 md:order-2 col-span-2 md:col-span-1 grid md:grid-cols-2 gap-4 text-xl select-none">
+                    <div id="answer-card-0" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
+                    <div id="answer-card-1" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
+                    <div id="answer-card-2" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
+                    <div id="answer-card-3" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
+                    <div id="answer-card-4" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
+                    <div id="answer-card-5" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
+                    <div id="answer-card-6" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
+                    <div id="answer-card-7" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
+                    <div id="answer-card-8" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
+                    <div id="answer-card-9" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
+                    <div id="answer-card-10" class="hidden flex items-center p-1 md:px-3 md:py-2 lg:px-6 lg:py-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 rounded-xl cursor-pointer border-4 border border-transparent" onclick="handleAnswerClicked(this)" tabindex="0"></div>
                 </div>
 
-                <div class="order-3 md:order-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 w-full md:w-auto rounded-xl mx-auto p-4 cursor-pointer" onclick="handleNextQuestion()">
+                <div id="next-question-button" class="order-3 md:order-3 bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-800 hover:dark:bg-neutral-700 w-full md:w-auto rounded-xl mx-auto p-4 cursor-pointer" onclick="nextQuestionButtonPressed()" tabindex="0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
