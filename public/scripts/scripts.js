@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     	|| window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     	setSettingsValue(SETTINGS_DARK_MODE_KEY, true);
         document.documentElement.classList.add('dark');
+        console.log("dark");
     }
 
     setValuesForSettingCheckboxes();
@@ -157,7 +158,7 @@ function insertQuizCardsForHomepage() {
 
     for (let [key, value] of Object.entries(QUIZ_META_INFO)) {
         newQuizCardHtmlContent += `
-            <div id="playable-quiz-card-${key}" class="bg-slate-50 dark:bg-neutral-800 rounded-xl p-6 shadow-xl shadow-black/5 ring-1 ring-indigo-700/10 flex flex-col gap-y-2" tabindex="0" aria-label="Start quiz ${value.title}">
+            <div id="playable-quiz-card-${key}" class="bg-blue-50 dark:bg-neutral-800 rounded-xl p-6 shadow-xl shadow-black/5 ring-1 ring-indigo-700/10 flex flex-col gap-y-2" tabindex="0" aria-label="Start quiz ${value.title}">
                 <h2 class="w-fit cursor-pointer text-slate-900 dark:text-slate-100 text-xl font-semibold">
                     <span class="hover:underline" onclick="setQuizToPlay(${key})">${value.title}</span>
                 </h2>
