@@ -23,6 +23,7 @@ SETTINGS_LIST.forEach(setting => SETTINGS.set(setting, localStorage.getItem(sett
 // QUIZ DATA
 QUIZ_DATA_MAP = new Map();
 QUIZ_DATA_MAP.set(1, '/data/data_1.json');
+QUIZ_DATA_MAP.set(2, '/data/data_2.json');
 //QUIZ_DATA_MAP.set("1", '/data/data_1_small.json');
 QUIZ_META_INFO = {}
 CURRENT_QUIZ = {}
@@ -37,7 +38,6 @@ CURRENT_QUESTION_NUMBER = 1;
 DIGIT_1_KEY_CODE = 49;
 // END
 
-
 document.addEventListener("DOMContentLoaded", (event) => {
     if (getSettingsValue(SETTINGS_DEBUG_KEY)) {
         showDebugDiv();
@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     	|| window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     	setSettingsValue(SETTINGS_DARK_MODE_KEY, true);
         document.documentElement.classList.add('dark');
-        console.log("dark");
     }
 
     setValuesForSettingCheckboxes();
@@ -90,8 +89,7 @@ function validateQuiz() {
 
             const questionPrefix = ANSWER_FORMAT_ORDER[j];
             if (!CURRENT_QUIZ.questions[i].answers[j].text.startsWith(questionPrefix)) {
-                alert("Answer at question '" + CURRENT_QUIZ.questions[i].question + "' has wrong asnwer order!");
-                alert(j, questionPrefix, CURRENT_QUIZ.questions[i].answers[j].text);
+                alert("Answer at question '" + CURRENT_QUIZ.questions[i].question + "' has wrong answer order!");
             }
         }
 

@@ -9,6 +9,7 @@ var path = require('path');
 // Create Express app
 const app = express();
 
+// TODO Compression / Minifiy breaks tailwind dark mode
 // compression
 //app.use(compression({ filter: shouldCompress }));
 
