@@ -24,15 +24,14 @@ SETTINGS_LIST.forEach(setting => SETTINGS.set(setting, localStorage.getItem(sett
 QUIZ_DATA_MAP = new Map();
 QUIZ_DATA_MAP.set(1, '/data/data_1.json');
 QUIZ_DATA_MAP.set(2, '/data/data_2.json');
-//QUIZ_DATA_MAP.set("1", '/data/data_1_small.json');
-QUIZ_META_INFO = {}
-CURRENT_QUIZ = {}
-// END OF QUIZ DATA
+//QUIZ_DATA_MAP.set(3, '/data/data_1_small.json');
 
-// CAN CHANGE
+QUIZ_META_INFO = {};
+CURRENT_QUIZ = {};
+CURRENT_PLAY_DATA = {};
 ANSWERED_QUESTION_INDEXES = new Map();
 CURRENT_QUESTION_NUMBER = 1;
-// END
+// END OF QUIZ DATA
 
 // KEY CODE
 DIGIT_1_KEY_CODE = 49;
@@ -143,6 +142,7 @@ function fetchQuizData(index) {
         })
         .then(data => {
             setQuiz(data);
+            resetPlayData();
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
@@ -156,7 +156,7 @@ function insertQuizCardsForHomepage() {
 
     for (let [key, value] of Object.entries(QUIZ_META_INFO)) {
         newQuizCardHtmlContent += `
-            <div id="playable-quiz-card-${key}" class="bg-blue-50 dark:bg-neutral-800 rounded-xl p-6 shadow-xl shadow-black/5 ring-1 ring-indigo-700/10 flex flex-col gap-y-2" tabindex="0" aria-label="Start quiz ${value.title}">
+            <div id="playable-quiz-card-${key}" class="bg-slate-200/25 dark:bg-neutral-800 rounded-xl p-6 shadow-xl shadow-black/5 ring-1 ring-indigo-700/10 flex flex-col gap-y-2" tabindex="0" aria-label="Start quiz ${value.title}">
                 <h2 class="w-fit cursor-pointer text-slate-900 dark:text-slate-100 text-xl font-semibold">
                     <span class="hover:underline" onclick="setQuizToPlay(${key})">${value.title}</span>
                 </h2>
@@ -286,6 +286,16 @@ function showFeedback(clickedElement, answeredCorrect, correctAnswerElement) {
         feedbackElement.innerHTML += '<p class="text-xl md:text-2xl">Det riktige svaret er: "<span class="text-underline">' + correctAnswerElement.textContent +
             '</span>"</span></p>'
     }
+
+    recordAnswer(answeredCorrect);
+}
+
+function recordAnswer(answeredCorrect) {
+    if (answeredCorrect) {
+        CURRENT_PLAY_DATA["correct"] += 1;
+    } else {
+        CURRENT_PLAY_DATA["wrong"] += 1;
+    }
 }
 
 function nextQuestionButtonPressed() {
@@ -296,6 +306,7 @@ function nextQuestionButtonPressed() {
     }
 
     if (isOnLastQuestion()) {
+        showResultPage();
         return;
     }
 
@@ -326,7 +337,6 @@ function isOnFirstQuestion() {
 
 function isOnLastQuestion() {
     if (CURRENT_QUESTION_NUMBER >= CURRENT_QUIZ.questions.length) {
-        alert("Enden på quizen er nådd!");
         return true;
     }
     return false;
@@ -354,6 +364,7 @@ function hideFrontpage() {
 function showFrontpage() {
     document.getElementById("front").style.display = 'inherit';
     setQuizCountText();
+    setMetaTitle("Quiz");
 }
 
 function hidePlaypage() {
@@ -362,6 +373,137 @@ function hidePlaypage() {
 
 function showPlaypage() {
     document.getElementById("play").style.display = 'inherit';
+}
+
+function showResultPage() {
+    const c = CURRENT_PLAY_DATA["correct"];
+    const w = CURRENT_PLAY_DATA["wrong"];
+    const l = CURRENT_PLAY_DATA["questions_length"];
+    const s = CURRENT_PLAY_DATA["start"];
+    const e = new Date();
+    const p = Math.round((c / l) * 100);
+
+    const answeredCorrectDiv = `
+        <div class="px-6 py-8 flex flex-row gap-x-4 items-center bg-green-100/45 dark:bg-green-600 dark:text-white text-green-800 rounded-xl font-semibold my-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" /> 
+            </svg> 
+            <span class="text-lg font-bold">Svaret ditt er riktig</span>
+        </div>`;
+
+    const answeredWrongDiv = `
+        <div class="px-6 py-8 flex flex-row gap-x-4 items-center bg-red-100/45 dark:bg-red-600 dark:text-white text-red-800 rounded-xl font-semibold my-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg> 
+            <span class="text-lg font-bold">Svaret ditt er feil</span>
+        </div>`;
+
+    let pageContentElement = document.getElementById("quiz-result-page-content");
+
+    let latterHTML = "";
+
+    // Reset content
+    pageContentElement.innerHTML = `
+        <div class="bg-slate-200/25 dark:bg-neutral-800 rounded-xl p-6 ring-1 ring-indigo-700/10">
+            <div class="text-center">
+                <h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-6xl font-bold">Ditt resultat 🏆</h1>
+                <span class="my-4 text-gray-400 uppercase text-sm font-bold">${CURRENT_QUIZ.title}</span> 
+            </div>
+            <div class="text-center my-4">
+                <p class="text-xl font-bold uppercase"><span>${p}%</span> korrekt</p>
+                <div class="flex flex-row items-center gap-x-2 justify-center my-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    <span>${timeDifference(s, e)}</span>
+                </div>
+                <p class="mt-2"><span>${c}</span>/<span>${l}</span> riktige svar</p>
+                <p><span>${w}</span>/<span>${l}</span> feil svar</p>
+            </div>
+        </div>`;
+
+    for (let i = 0; i < CURRENT_QUIZ.questions.length; i++) {
+        const answeredIndex = parseInt(ANSWERED_QUESTION_INDEXES.get(i+1));
+        const question = CURRENT_QUIZ.questions[i];
+
+        let isAnswerCorrect;
+
+        try {
+            isAnswerCorrect = question.answers[answeredIndex].correct;
+        } catch (error) {
+            isAnswerCorrect = getSettingsValue(SETTINGS_DEBUG_KEY) ? false : null;
+        }
+
+        if (isAnswerCorrect === null) {
+            alert("Noe gikk galt...");
+            break;
+        }
+
+        let answersHtml = '';
+
+        for (let j = 0; j < question.answers.length; j++) {
+            const answer = question.answers[j];
+
+            let cssClass = "border rounded-xl p-6";
+            if (answer.correct) {
+                cssClass += ' bg-green-100/45 border-green-400/90 dark:bg-green-600 dark:border-transparent dark:text-white';
+            } else if (!answer.correct && j === answeredIndex) {
+                cssClass += ' bg-red-100/45 border-red-400/90 dark:bg-red-600 dark:border-transparent dark:text-white';
+            }
+
+            answersHtml += `
+                <div class="${cssClass}">
+                    <span>${answer.text}</span>
+                </div>`;
+        }
+
+        latterHTML += `
+            <div>
+                <button class="px-2 py-4 hover:bg-slate-200 hover:dark:bg-neutral-800 accordion-active flex flex-row justify-between w-full" onclick="toggleAccordion(this)">
+                    <h3 class="text-slate-900 dark:text-slate-100 text-xl text-left font-bold">
+                        ${question.question}
+                    </h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="rotate-180 size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                    </svg>
+                </button>
+
+                <div class="flex">
+                    <div class="w-full">
+                        <div class="panel overflow-hidden transition-max-height duration-200" style="max-height: 100%;">
+                            <div class="quiz-result-question-result">
+                                ${isAnswerCorrect ? answeredCorrectDiv : answeredWrongDiv}
+                            </div>
+                            <div class="grid grid-row-auto gap-y-6">
+                                ${answersHtml}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+    }
+
+    // Close the outer container
+    latterHTML += `</div></div>`;
+
+    pageContentElement.innerHTML += `
+        <div class="grid grid-rows-auto gap-y-8 my-6">
+            ${latterHTML}
+        </div>
+    `;
+
+    hidePlaypage();
+
+    // Display the result page
+    document.getElementById("quiz-result-page").style.display = 'inherit';
+
+    setMetaTitle(`Resultat ${CURRENT_QUIZ.title}`)
+}
+
+
+function hideResultPage() {
+    document.getElementById("quiz-result-page").style.display = 'none';
 }
 
 function setQuizMetaInfoForKey(key, quizObject) {
@@ -373,7 +515,16 @@ function setQuizMetaInfoForKey(key, quizObject) {
 }
 
 function setQuiz(data) {
-    CURRENT_QUIZ = data;
+    CURRENT_QUIZ = data; 
+}
+
+function resetPlayData() {
+    CURRENT_PLAY_DATA = {
+        "questions_length": CURRENT_QUIZ.questions.length,
+        "correct": 0,
+        "wrong": 0,
+        "start": new Date()
+    };
 }
 
 function getCurrentQuestion() {
@@ -393,27 +544,48 @@ function getCorrectAnswer() {
 }
 
 function showHome() {
-    resetQuiz();
-    removeCurrentQuiz();
+    clearQuiz();
     hidePlaypage();
+    hideResultPage();
     showFrontpage();
     setValuesForSettingCheckboxes();
-    setMetaTitle("Quizer");
+}
+
+function playAgain() {
+    resetQuiz();
+    hideResultPage();
+    showPlaypage();
+    showCurrentQuestion();
+}
+
+function clearQuiz() {
+    resetGlobalVars();
+
+    resetUserInputs();
+
+    removeCurrentQuiz();
 }
 
 function resetQuiz() {
-    ANSWERED_QUESTION_INDEXES = new Map();
-    CURRENT_QUESTION_NUMBER = 1;
+    resetGlobalVars();
 
     resetUserInputs();
+
+    resetPlayData();
 
     shuffleQuiz();
 
     showCurrentQuestion();
 }
 
+function resetGlobalVars() {
+    ANSWERED_QUESTION_INDEXES = new Map();
+    CURRENT_QUESTION_NUMBER = 1;
+    CURRENT_PLAY_DATA = {};
+}
+
 function removeCurrentQuiz() {
-	CURRENT_QUIZ = {}
+	CURRENT_QUIZ = {};
 }
 
 function setValuesForSettingCheckboxes() {
@@ -513,7 +685,7 @@ function setAnswerText(answer, answerElement, index) {
 }
 
 function showDebugDiv() {
-    document.getElementById("debug-div").style.display = "inherit";
+    document.getElementById("debug-div").style.display = "flex";
 }
 
 function hideDebugDiv() {
@@ -560,6 +732,16 @@ function setQuizQuestionsCount() {
 
 function updateCurrentQuestionIndexText() {
     document.getElementById("current-quiz-question-index").textContent = CURRENT_QUESTION_NUMBER;
+    validateQuestionIndex();
+}
+
+function validateQuestionIndex() {
+    const val = parseInt(document.getElementById("current-quiz-question-index").textContent);
+
+    if (val && val > 0 && CURRENT_QUESTION_NUMBER > val) {
+        resetQuiz();
+        alert("Noe gikk galt...");
+    }
 }
 
 function getAnswerCardElementId(index) {
@@ -574,7 +756,7 @@ function initKeyDownListener() {
 
 		const pressedEnter = pressedKeyCode === 13;
 
-		const isPlayingAQuiz = Object.keys(CURRENT_QUIZ).length >= 1;
+		const isPlayingAQuiz = document.getElementById("play").style.display === "inherit";
 
 		const pressedEnterOnAnInput = pressedEnter && !isPlayingAQuiz 
 			&& event.target && event.target.tagName === "INPUT";
@@ -643,8 +825,41 @@ function debugMessage(msg) {
 	}
 }
 
+// SOURCE https://www.w3schools.com/howto/howto_js_accordion.asp
+function toggleAccordion(element) {
+    const panel = element.parentElement.querySelector(".panel");
+    const isActive = panel.style.maxHeight !== "0px";
+
+    const svg = element.lastElementChild;
+    svg.classList.toggle("rotate-180");
+
+    if (isActive) {
+        element.classList.remove("accordion-active");
+        panel.style.maxHeight = "0";
+    } else {
+         element.classList.add("accordion-active");
+         panel.style.maxHeight = "100%";
+    }
+}
+
 function initAnalytics() {
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init push capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_W6emONuvTwnDC06tGgJCGV5wByTdso4H99HK5KjapqQ',{api_host:'https://eu.i.posthog.com', person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
 	})
+}
+
+function timeDifference(start, end) {
+    // Get the difference in milliseconds
+    const diff = end - start;
+
+    // Calculate hours, minutes, and seconds
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const hourText = `${hours} time${hours !== 1 ? 'r' : ''}`;
+    const minuteText = `${minutes} minutt${minutes !== 1 ? 'er' : ''}`;
+    const secondText = `${seconds} sekund${seconds !== 1 ? 'er' : ''}`;
+
+    return `${hourText}, ${minuteText}, ${secondText}`;
 }

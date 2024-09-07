@@ -3,7 +3,11 @@ module.exports = {
   content: ["./views/*.ejs"],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      transitionProperty: {
+        'max-height': 'max-height'
+      }
+    },
   },
   plugins: [
 		require('tailwindcss'),
