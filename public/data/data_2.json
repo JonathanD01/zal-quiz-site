@@ -1513,7 +1513,7 @@
             "answers": [
                 {
                     "text": "a) Har mennesker som eneste vert",
-                    "correct": true
+                    "correct": false
                 },
                 {
                     "text": "b) Er årsak til akutte infeksjoner som går fort over",
@@ -1521,7 +1521,7 @@
                 },
                 {
                     "text": "c) Fører til latente infeksjoner eller bærertilstander",
-                    "correct": false
+                    "correct": true
                 },
                 {
                     "text": "d) Gir opphav til livsvarig immunitet hos pasienten",
@@ -1576,7 +1576,7 @@
             ]
         },
         {
-            "question": "74. Hva er i kke en årsak til at infeksjoner kan få nytt fotfeste i verden?",
+            "question": "74. Hva er ikke en årsak til at infeksjoner kan få nytt fotfeste i verden?",
             "answers": [
                 {
                     "text": "a) Vegetarkost (gir nedsatt immunforsvar pga. manglende proteiner)",
