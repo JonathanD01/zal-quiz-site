@@ -56,6 +56,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initKeyDownListener();
 
     initAnalytics();
+
+    reloadIfHiddenFor(60);
 });
 
 function setQuizToPlay(index) {
@@ -862,4 +864,28 @@ function timeDifference(start, end) {
     const secondText = `${seconds} sekund${seconds !== 1 ? 'er' : ''}`;
 
     return `${hourText}, ${minuteText}, ${secondText}`;
+}
+
+function reloadIfHiddenFor(minutes) {
+    let hiddenStartTime;
+
+    const timeLimit = minutes * 60 * 1000; // Convert minutes to milliseconds
+
+    document.addEventListener("visibilitychange", () => {
+        if (document.hidden) {
+            // Record the time when the page is hidden
+            hiddenStartTime = new Date().getTime();
+        } else {
+            if (hiddenStartTime) {
+                // Calculate the time the page was hidden
+                const hiddenDuration = new Date().getTime() - hiddenStartTime;
+
+                // Reload if hidden for more than the specified time
+                if (hiddenDuration >= timeLimit) {
+                    location.reload();
+                    console.log("Page reloaded due to inactivity for " + timeLimit + " minutes");
+                }
+            }
+        }
+    });
 }
