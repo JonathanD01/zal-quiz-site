@@ -2,19 +2,10 @@
 
 // Required modules
 var express = require('express');
-var compression = require('compression');
-var minify = require('express-minify');
 var path = require('path');
 
 // Create Express app
 const app = express();
-
-// TODO Compression / Minifiy breaks tailwind dark mode
-// compression
-//app.use(compression({ filter: shouldCompress }));
-
-// minify
-//app.use(minify());
 
 // Set up static file serving
 app.use(express.static(path.join(__dirname, 'public')));

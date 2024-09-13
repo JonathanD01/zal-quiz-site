@@ -56,8 +56,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     initKeyDownListener();
 
     initAnalytics();
-
-    reloadIfHiddenFor(60);
 });
 
 function setQuizToPlay(index) {
@@ -158,16 +156,16 @@ function insertQuizCardsForHomepage() {
 
     for (let [key, value] of Object.entries(QUIZ_META_INFO)) {
         newQuizCardHtmlContent += `
-            <div id="playable-quiz-card-${key}" class="bg-slate-200/25 dark:bg-neutral-800 rounded-xl p-6 shadow-xl shadow-black/5 ring-1 ring-indigo-700/10 flex flex-col gap-y-2" tabindex="0" aria-label="Start quiz ${value.title}">
+            <div id="playable-quiz-card-${key}" class="bg-gray-100 dark:bg-neutral-800 rounded-xl p-6 shadow-xl shadow-black/5 ring-1 ring-indigo-700/10 flex flex-col gap-y-2" tabindex="0" aria-label="Start quiz ${value.title}">
                 <h2 class="w-fit cursor-pointer text-slate-900 dark:text-slate-100 text-xl font-semibold">
                     <span class="hover:underline" onclick="setQuizToPlay(${key})">${value.title}</span>
                 </h2>
                 <div class="flex flex-col gap-y-2">
                     <span><a class="hover:underline text-blue-600 dark:text-blue-400" href="${value.document_url}" aria-label="Download document for ${value.title}" download>Last ned dokumentet</a></span>
-                    <span class="text-gray-500 block">Antall spørsmål: ${value.length}</span>
+                    <span class="text-gray-600 dark:text-gray-400 block">Antall spørsmål: ${value.length}</span>
                 </div>
                 <div class="w-min">
-                    <button class="flex flex-row items-center gap-x-2 bg-neutral-950 hover:bg-neutral-950/40 py-2 px-4 font-bold text-white align-middle" onclick="setQuizToPlay(${key})" aria-label="Start quiz ${value.title}">
+                    <button class="flex flex-row items-center gap-x-2 bg-neutral-950 hover:bg-neutral-950/40 py-2 px-4 font-bold text-white align-middle rounded-xl" onclick="setQuizToPlay(${key})" aria-label="Start quiz ${value.title}">
                         <span>Spill</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -196,6 +194,8 @@ function startQuiz(index) {
             showCurrentQuestion();
 
             setMetaTitle(`Quizer | ${CURRENT_QUIZ.title}`)
+
+            printInformation();
         })
         .catch(error => {
             console.error('Error starting the quiz:', error);
@@ -264,6 +264,7 @@ function handleAnswerClicked(element, ignoreCheck = false) {
 
     showFeedback(element, answeredCorrect, correctAnswerElement);
     setQuestionAnswered(clickedIndex);
+    recordAnswer(answeredCorrect);
 }
 
 function hasAnsweredQuestion() {
@@ -288,8 +289,6 @@ function showFeedback(clickedElement, answeredCorrect, correctAnswerElement) {
         feedbackElement.innerHTML += '<p class="text-xl md:text-2xl">Det riktige svaret er: "<span class="text-underline">' + correctAnswerElement.textContent +
             '</span>"</span></p>'
     }
-
-    recordAnswer(answeredCorrect);
 }
 
 function recordAnswer(answeredCorrect) {
@@ -378,9 +377,9 @@ function showPlaypage() {
 }
 
 function showResultPage() {
-    const c = CURRENT_PLAY_DATA["correct"];
-    const w = CURRENT_PLAY_DATA["wrong"];
     const l = CURRENT_PLAY_DATA["questions_length"];
+    const c = Math.min(CURRENT_PLAY_DATA["correct"], l);
+    const w = Math.min(CURRENT_PLAY_DATA["wrong"], l);
     const s = CURRENT_PLAY_DATA["start"];
     const e = new Date();
     const p = Math.round((c / l) * 100);
@@ -407,10 +406,10 @@ function showResultPage() {
 
     // Reset content
     pageContentElement.innerHTML = `
-        <div class="bg-slate-200/25 dark:bg-neutral-800 rounded-xl p-6 ring-1 ring-indigo-700/10">
+        <div class="bg-gray-100 dark:bg-neutral-800 rounded-xl p-6 ring-1 ring-indigo-700/10">
             <div class="text-center">
                 <h1 class="text-slate-900 dark:text-slate-100 text-4xl md:text-6xl font-bold">Ditt resultat 🏆</h1>
-                <span class="my-4 text-gray-400 uppercase text-sm font-bold">${CURRENT_QUIZ.title}</span> 
+                <span class="my-4 text-gray-600 dark:text-gray-400 uppercase text-sm font-bold">${CURRENT_QUIZ.title}</span> 
             </div>
             <div class="text-center my-4">
                 <p class="text-xl font-bold uppercase"><span>${p}%</span> korrekt</p>
@@ -462,7 +461,7 @@ function showResultPage() {
 
         latterHTML += `
             <div>
-                <button class="px-2 py-4 hover:bg-slate-200 hover:dark:bg-neutral-800 accordion-active flex flex-row justify-between w-full" onclick="toggleAccordion(this)">
+                <button class="px-2 py-4 hover:bg-gray-100 hover:dark:bg-neutral-800 accordion-active flex flex-row justify-between w-full" onclick="toggleAccordion(this)">
                     <h3 class="text-slate-900 dark:text-slate-100 text-xl text-left font-bold">
                         ${question.question}
                     </h3>
@@ -694,8 +693,17 @@ function hideDebugDiv() {
     document.getElementById("debug-div").style.display = "none";
 }
 
-function goToSpecificQuestion() {
-    const questionNumber = document.getElementById("quiz-question-number-input").value;
+function goToSpecificQuestion(number = null) {
+    if (!getSettingsValue(SETTINGS_DEBUG_KEY)) {
+        console.warn("Must be in debug mode to use this!");
+        return;
+    }
+
+    if (!isPlayingAQuiz()) {
+        console.warn("You must be playing a quiz!");
+        return;
+    }
+    const questionNumber = number || document.getElementById("quiz-question-number-input").value;
     if (!questionNumber) {
         alert("You must provide a question number like 10");
         return;
@@ -705,13 +713,8 @@ function goToSpecificQuestion() {
 }
 
 function showSpecificQuizQuestion(questionNumber) {
-    const questionIndex = questionNumber;
     const quizSize = CURRENT_QUIZ.questions.length;
-
-    if (questionIndex > quizSize) {
-        alert("This quiz only have " + quizSize + " questions");
-        return;
-    }
+    const questionIndex = Math.min(questionNumber, quizSize);
 
     resetUserInputs();
 
@@ -758,18 +761,16 @@ function initKeyDownListener() {
 
 		const pressedEnter = pressedKeyCode === 13;
 
-		const isPlayingAQuiz = document.getElementById("play").style.display === "inherit";
-
-		const pressedEnterOnAnInput = pressedEnter && !isPlayingAQuiz 
+		const pressedEnterOnAnInput = pressedEnter && !isPlayingAQuiz() 
 			&& event.target && event.target.tagName === "INPUT";
 
-		const pressedEnterOnAPlayableQuiz = pressedEnter && !isPlayingAQuiz 
+		const pressedEnterOnAPlayableQuiz = pressedEnter && !isPlayingAQuiz() 
 			&& event.target && event.target.id.startsWith("playable-quiz-card");
 
-		const pressedEnterOnAnAnswer = pressedEnter && isPlayingAQuiz 
+		const pressedEnterOnAnAnswer = pressedEnter && isPlayingAQuiz() 
 			&& event.target && event.target.id.startsWith(ANSWER_CARD_START_ID_NAME);
 
-		const pressedPreviousOrNextButton = pressedEnter && isPlayingAQuiz 
+		const pressedPreviousOrNextButton = pressedEnter && isPlayingAQuiz() 
 			&& event.target 
 			&& (event.target.id === "previous-question-button" || event.target.id === "next-question-button");
 			
@@ -784,7 +785,7 @@ function initKeyDownListener() {
 			return;
 		}
 
-		if (!isPlayingAQuiz) {
+		if (!isPlayingAQuiz()) {
 			debugMessage("keyListener ignored, no active quiz");
 			return;
 		}
@@ -866,26 +867,11 @@ function timeDifference(start, end) {
     return `${hourText}, ${minuteText}, ${secondText}`;
 }
 
-function reloadIfHiddenFor(minutes) {
-    let hiddenStartTime;
+function printInformation() {
+    console.log("Playing " + CURRENT_QUIZ.title);
+    console.log("Settings: " + console.table(SETTINGS));
+}
 
-    const timeLimit = minutes * 60 * 1000; // Convert minutes to milliseconds
-
-    document.addEventListener("visibilitychange", () => {
-        if (document.hidden) {
-            // Record the time when the page is hidden
-            hiddenStartTime = new Date().getTime();
-        } else {
-            if (hiddenStartTime) {
-                // Calculate the time the page was hidden
-                const hiddenDuration = new Date().getTime() - hiddenStartTime;
-
-                // Reload if hidden for more than the specified time
-                if (hiddenDuration >= timeLimit) {
-                    location.reload();
-                    console.log("Page reloaded due to inactivity for " + timeLimit + " minutes");
-                }
-            }
-        }
-    });
+function isPlayingAQuiz() {
+    return document.getElementById("play").style.display === "inherit";
 }
